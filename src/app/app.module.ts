@@ -15,6 +15,11 @@ import { SukanyaComponent } from './main/sukanya/sukanya.component';
 import { FaqComponent } from './main/faq/faq.component';
 import { LoginComponent } from './main/login/login.component';
 import { RegisterComponent } from './main/register/register.component';
+import { CriteriaComponent } from './main/ngo/ngo/criteria/criteria.component';
+import { OrganizationComponent } from './main/ngo/organization/organization.component';
+import { FundingComponent } from './main/ngo/funding/funding.component';
+import { NgoregisterComponent } from './main/ngo/ngoregister/ngoregister.component';
+import { NgostatusComponent } from './main/ngo/ngostatus/ngostatus.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,12 @@ import { RegisterComponent } from './main/register/register.component';
     SukanyaComponent,
     FaqComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CriteriaComponent,
+    OrganizationComponent,
+    FundingComponent,
+    NgoregisterComponent,
+    NgostatusComponent
   ],
   imports: [
     BrowserModule,
