@@ -5,12 +5,12 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CandidateService {
+export class NGOService {
 
-  apiUrl:string="http://localhost:8086/WESpringBoot/candidates";
+  apiUrl:string="http://localhost:8086/ngo";
   constructor(private http:HttpClient) { }
 
-  // TO list all candidates 
+  // TO list all ngos 
   getAll()
   {
     return this.http.get(`${this.apiUrl}`);
@@ -21,19 +21,19 @@ export class CandidateService {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
 
-  //To Add Candidates
+  //To Add NGOs
   create(data:any):Observable<any>{
     let API = `${this.apiUrl}`;
     return this.http.post(API,data);
   }
 
-  //To update candidate
+  //To update NGO
   update(id:any,data:any):Observable<any>
   {
     return this.http.put(`${this.apiUrl}/${id}`,data);
   }
 
-  //TO delete Candidate
+  //TO delete NGO
   delete(id:any):Observable<any>
   {
     return this.http.delete(`${this.apiUrl}/${id}`, { responseType: 'text' });
