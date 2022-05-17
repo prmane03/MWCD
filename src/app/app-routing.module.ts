@@ -12,6 +12,8 @@ import { NgoComponent } from './main/ngo/ngo.component';
 import { RegisterComponent } from './main/register/register.component';
 import { StepComponent } from './main/step/step.component';
 import { SukanyaComponent } from './main/sukanya/sukanya.component';
+import { AddNgoComponent } from './admin/add-ngo/add-ngo.component';
+import { UpdateNgoComponent } from './admin/update-ngo/update-ngo.component';
 
 const routes: Routes = [
 
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'adminngo', component:  AdminNgoComponent},
+  { path: 'add-ngo', component:  AddNgoComponent},
+  { path: 'update-ngo', component:  UpdateNgoComponent}
 
 
 ];

@@ -19,6 +19,9 @@ import { CandidateComponent } from './admin/candidate/candidate.component';
 import { AdminNgoComponent } from './admin/admin-ngo/admin-ngo.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddNgoComponent } from './admin/add-ngo/add-ngo.component';
+import { UpdateNgoComponent } from './admin/update-ngo/update-ngo.component';
+import { AddCandidateComponent } from './admin/add-candidate/add-candidate.component';
+import { UpdateCandidateComponent } from './admin/update-candidate/update-candidate.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { AddNgoComponent } from './admin/add-ngo/add-ngo.component';
     RegisterComponent,
     CandidateComponent,
     AdminNgoComponent,
-    AddNgoComponent
+    AddNgoComponent,
+    UpdateNgoComponent,
+    AddCandidateComponent,
+    UpdateCandidateComponent
   ],
   imports: [
     BrowserModule,
