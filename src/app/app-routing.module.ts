@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminNgoComponent } from './admin/admin-ngo/admin-ngo.component';
 import { AboutComponent } from './main/about/about.component';
 import { AdminComponent } from './main/admin/admin.component';
 import { FaqComponent } from './main/faq/faq.component';
@@ -25,6 +26,8 @@ const routes: Routes = [
   { path: 'hostel', component: HostelComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'adminngo', component:  AdminNgoComponent},
+
 
 ];
 

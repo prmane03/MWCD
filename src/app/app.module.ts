@@ -15,6 +15,10 @@ import { SukanyaComponent } from './main/sukanya/sukanya.component';
 import { FaqComponent } from './main/faq/faq.component';
 import { LoginComponent } from './main/login/login.component';
 import { RegisterComponent } from './main/register/register.component';
+import { CandidateComponent } from './admin/candidate/candidate.component';
+import { AdminNgoComponent } from './admin/admin-ngo/admin-ngo.component';
+import { AddNgoComponent } from './add-ngo/add-ngo.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,11 +34,15 @@ import { RegisterComponent } from './main/register/register.component';
     SukanyaComponent,
     FaqComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CandidateComponent,
+    AdminNgoComponent,
+    AddNgoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
