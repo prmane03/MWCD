@@ -14,6 +14,8 @@ import { StepComponent } from './main/step/step.component';
 import { SukanyaComponent } from './main/sukanya/sukanya.component';
 import { AddNgoComponent } from './admin/add-ngo/add-ngo.component';
 import { UpdateNgoComponent } from './admin/update-ngo/update-ngo.component';
+import { AddCandidateComponent } from './admin/add-candidate/add-candidate.component';
+import { UpdateCandidateComponent } from './admin/update-candidate/update-candidate.component';
 
 const routes: Routes = [
 
@@ -26,11 +28,19 @@ const routes: Routes = [
   { path: 'sukanya', component: SukanyaComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'hostel', component: HostelComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'adminngo', component:  AdminNgoComponent},
+  { path: 'admin',children:[
+    { path: 'adminngo', component:  AdminNgoComponent},
   { path: 'add-ngo', component:  AddNgoComponent},
-  { path: 'update-ngo', component:  UpdateNgoComponent}
+  { path: 'update-ngo', component:  UpdateNgoComponent},
+  { path: 'add-candidate', component: AddCandidateComponent},
+  { path: 'update-candidate', component: UpdateCandidateComponent}
+  ] },
+  { path: 'auth',children : 
+  [
+    { path: 'login/:type', component: LoginComponent },
+    { path: 'register/:type', component: RegisterComponent }
+  ] },
+  
 
 
 ];

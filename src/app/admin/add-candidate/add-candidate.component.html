@@ -26,19 +26,35 @@
       <div class="mb-3">
         <label for="aadh" class="form-label">Aadhar number:</label>
         <input type="text" class="form-control" id="aadh" placeholder="Enter your aadhar number" name="aadh">
-      </div>
-      <div class="btn-group">
-        <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          Action
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Single</a></li>
-          <li><a class="dropdown-item" href="#">Married</a></li>
-          <li><a class="dropdown-item" href="#">Divorced</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Widowed</a></li>
-        </ul>
-      </div>
+      </div><br>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Marital Status</option>
+        <option value="1">Single</option>
+        <option value="2">Married</option>
+        <option value="3">Divorced</option>
+        <option value="4">Widowed</option>
+      </select><br>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Highest Qualification</option>
+        <option value="1">SSC</option>
+        <option value="2">HSC</option>
+        <option value="3">Graduation</option>
+        <option value="4">Post-Graduation</option>
+      </select><br>
+      <div class="mb-3">
+        <label for="hqp" class="form-label">Highest Qualification Proof:</label>
+        <input type="file" class="form-control" id="hqp" placeholder="Enter your mobile number" name="hqp">
+      </div><br>
+      <div class="mb-3">
+        <label for="ap" class="form-label">Aadhar Proof:</label>
+        <input type="file" class="form-control" id="ap" placeholder="Enter your mobile number" name="ap">
+      </div><br>
+      <div class="mb-3">
+        <label for="ip" class="form-label">Income Proof:</label>
+        <input type="file" class="form-control" id="ip" placeholder="Enter your mobile number" name="ip">
+      </div><br>
+  
+  
   
     <button type="submit" class="btn btn-primary">Add</button>
   </form>
