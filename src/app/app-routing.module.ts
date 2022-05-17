@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminNgoComponent } from './admin/admin-ngo/admin-ngo.component';
+import { RoleGuard } from './Guard/role.guard';
 import { AboutComponent } from './main/about/about.component';
 import { AdminComponent } from './main/admin/admin.component';
 import { FaqComponent } from './main/faq/faq.component';
@@ -15,7 +16,14 @@ import { SukanyaComponent } from './main/sukanya/sukanya.component';
 
 const routes: Routes = [
 
-  { path: '', component: HomeComponent },
+  { 
+    path: '', 
+    component: HomeComponent , 
+    canActivate:[RoleGuard],
+    data:{
+      roles:['admins','candidates','ngo']
+    }
+  },
   { path: 'about', component: AboutComponent },
   { path: 'legislation', component: LegislationComponent },
   { path: 'step', component: StepComponent },

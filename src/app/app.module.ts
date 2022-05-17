@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +19,6 @@ import { LoginComponent } from './main/login/login.component';
 import { RegisterComponent } from './main/register/register.component';
 import { CandidateComponent } from './admin/candidate/candidate.component';
 import { AdminNgoComponent } from './admin/admin-ngo/admin-ngo.component';
-import { HttpClientModule } from '@angular/common/http';
 import { AddNgoComponent } from './admin/add-ngo/add-ngo.component';
 
 @NgModule({
@@ -42,7 +43,9 @@ import { AddNgoComponent } from './admin/add-ngo/add-ngo.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
