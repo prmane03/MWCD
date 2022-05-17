@@ -28,6 +28,9 @@ import { AddNgoComponent } from './admin/add-ngo/add-ngo.component';
 import { UpdateNgoComponent } from './admin/update-ngo/update-ngo.component';
 import { AddCandidateComponent } from './admin/add-candidate/add-candidate.component';
 import { UpdateCandidateComponent } from './admin/update-candidate/update-candidate.component';
+import { HostelLocationComponent } from './hostel/hostel-location/hostel-location.component';
+
+import { HostelBookingComponent } from './hostel/hostel-booking/hostel-booking.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,9 @@ import { UpdateCandidateComponent } from './admin/update-candidate/update-candid
     AddNgoComponent,
     UpdateNgoComponent,
     AddCandidateComponent,
-    UpdateCandidateComponent
+    UpdateCandidateComponent,
+    HostelLocationComponent,
+    HostelBookingComponent
   ],
   imports: [
     BrowserModule,
