@@ -27,8 +27,8 @@ const routes: Routes = [
   { path: 'adminngo', component:  AdminNgoComponent},
   { path: 'auth',children : 
   [
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent }
+    { path: 'login/:type', component: LoginComponent },
+    { path: 'register/:type', component: RegisterComponent }
   ] },
   
 
