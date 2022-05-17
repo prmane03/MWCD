@@ -49,6 +49,13 @@ const routes: Routes = [
       {path: 'ngostatus', component: NgostatusComponent},
     
   ]},
+  { path: 'adminngo', component:  AdminNgoComponent},
+  { path: 'auth',children : 
+  [
+    { path: 'login/:type', component: LoginComponent },
+    { path: 'register/:type', component: RegisterComponent }
+  ] },
+  
 
 
 ];
