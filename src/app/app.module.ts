@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,8 +24,10 @@ import { NgoregisterComponent } from './ngo/ngoregister/ngoregister.component';
 import { NgostatusComponent } from './ngo/ngostatus/ngostatus.component';
 import { CandidateComponent } from './admin/candidate/candidate.component';
 import { AdminNgoComponent } from './admin/admin-ngo/admin-ngo.component';
-import { HttpClientModule } from '@angular/common/http';
 import { AddNgoComponent } from './admin/add-ngo/add-ngo.component';
+import { UpdateNgoComponent } from './admin/update-ngo/update-ngo.component';
+import { AddCandidateComponent } from './admin/add-candidate/add-candidate.component';
+import { UpdateCandidateComponent } from './admin/update-candidate/update-candidate.component';
 
 @NgModule({
   declarations: [
@@ -47,12 +51,17 @@ import { AddNgoComponent } from './admin/add-ngo/add-ngo.component';
     NgostatusComponent,
     CandidateComponent,
     AdminNgoComponent,
-    AddNgoComponent
+    AddNgoComponent,
+    UpdateNgoComponent,
+    AddCandidateComponent,
+    UpdateCandidateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

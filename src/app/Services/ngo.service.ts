@@ -16,6 +16,11 @@ export class NGOService {
     return this.http.get(`${this.apiUrl}`);
   }
 
+  getByIdEmail(email:String):Observable<any>
+  {
+    return this.http.get(`http://localhost:8086/WESpringBoot/ngoByEmail/${email}`);
+  }
+
   getById(id:any):Observable<any>
   {
     return this.http.get(`${this.apiUrl}/${id}`);
