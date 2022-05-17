@@ -1,16 +1,31 @@
 <form action="/action_page.php">
-    <div class="mb-3 mt-3">
-      <label for="email" class="form-label">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+  <div class="mb-3 mt-3">
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter email" formControlName="email" name="email">
+    <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+      <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
+      <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
+      </div>
+
     </div>
     <div class="mb-3">
       <label for="pwd" class="form-label">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" formControlName="pass" name="pswd">
+      <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+        <div *ngIf="f['password'].errors && f['password'].errors['required']">password is required.</div>
+        <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Password should be 8 character long</div>
+    </div>
+
+
     </div>
     <div class="mb-3">
-        <label for="name" class="form-label">Name:</label>
-        <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+      <label for="name" class="form-label">Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter name" formControlName="name" name="name">
+      <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+        <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
+        <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
       </div>
+
       <div class="mb-3">
         <label for="dir" class="form-label">Director:</label>
         <input type="text" class="form-control" id="dir" placeholder="Enter director's name" name="dir">
@@ -19,7 +34,7 @@
         <label for="address" class="form-label">Address:</label>
         <input type="text" class="form-control" id="address" placeholder="Enter address" name="address">
       </div>
-    
-  
-    <button type="submit" class="btn btn-primary">Add</button>
-  </form>
+
+
+      <button type="submit" class="btn btn-primary">Add</button>
+</form>

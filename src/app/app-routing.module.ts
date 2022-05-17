@@ -13,19 +13,16 @@ import { NgoComponent } from './ngo/ngo.component';
 import { RegisterComponent } from './main/register/register.component';
 import { StepComponent } from './main/step/step.component';
 import { SukanyaComponent } from './main/sukanya/sukanya.component';
-<<<<<<< HEAD
 import { AddNgoComponent } from './admin/add-ngo/add-ngo.component';
 import { UpdateNgoComponent } from './admin/update-ngo/update-ngo.component';
 import { AddCandidateComponent } from './admin/add-candidate/add-candidate.component';
 import { UpdateCandidateComponent } from './admin/update-candidate/update-candidate.component';
-=======
 import { NgoregisterComponent } from './ngo/ngoregister/ngoregister.component';
 import { CriteriaComponent } from './ngo/criteria/criteria.component';
 import { NgostatusComponent } from './ngo/ngostatus/ngostatus.component';
 import { OrganizationComponent } from './ngo/organization/organization.component';
 import { FundingComponent } from './ngo/funding/funding.component';
 
->>>>>>> d86f44f65b66af80522b88589838a3250914a180
 
 const routes: Routes = [
 
@@ -45,7 +42,6 @@ const routes: Routes = [
   { path: 'sukanya', component: SukanyaComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'hostel', component: HostelComponent },
-<<<<<<< HEAD
   { path: 'admin',children:[
     { path: 'adminngo', component:  AdminNgoComponent},
   { path: 'add-ngo', component:  AddNgoComponent},
@@ -53,17 +49,12 @@ const routes: Routes = [
   { path: 'add-candidate', component: AddCandidateComponent},
   { path: 'update-candidate', component: UpdateCandidateComponent}
   ] },
-=======
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'ngoregister', component: NgoregisterComponent },
-  { path: 'criteria', component:CriteriaComponent },
-  { path: 'ngostatus', component: NgostatusComponent },
-  { path: 'organization', component: OrganizationComponent},
-  { path: 'funding', component: FundingComponent},
+ 
   { path: 'adminngo', component:  AdminNgoComponent},
-  {path: 'ngostatus', component:NgostatusComponent},
-  { path: 'auth',children :
+ 
+  { path: 'ngo',children :
 
   [
       {path: 'criteria', component: CriteriaComponent},
@@ -74,7 +65,6 @@ const routes: Routes = [
     
   ]},
   { path: 'adminngo', component:  AdminNgoComponent},
->>>>>>> d86f44f65b66af80522b88589838a3250914a180
   { path: 'auth',children : 
   [
     { path: 'login/:type', component: LoginComponent },
