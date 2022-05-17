@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminNgoComponent } from './admin/admin-ngo/admin-ngo.component';
 import { AboutComponent } from './main/about/about.component';
 import { AdminComponent } from './main/admin/admin.component';
 import { FaqComponent } from './main/faq/faq.component';
@@ -20,7 +21,7 @@ import { FundingComponent } from './ngo/funding/funding.component';
 
 const routes: Routes = [
 
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'legislation', component: LegislationComponent },
   { path: 'step', component: StepComponent },
@@ -35,7 +36,19 @@ const routes: Routes = [
   { path: 'criteria', component:CriteriaComponent },
   { path: 'ngostatus', component: NgostatusComponent },
   { path: 'organization', component: OrganizationComponent},
-  { path: 'funding', component: FundingComponent}
+  { path: 'funding', component: FundingComponent},
+  { path: 'adminngo', component:  AdminNgoComponent},
+  {path: 'ngostatus', component:NgostatusComponent},
+  { path: 'auth',children :
+
+  [
+      {path: 'criteria', component: CriteriaComponent},
+      {path: 'funding', component: FundingComponent},
+      {path: 'organization', component: OrganizationComponent},
+      {path: 'ngoregister', component: NgoregisterComponent},
+      {path: 'ngostatus', component: NgostatusComponent},
+    
+  ]},
 
 
 ];

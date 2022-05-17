@@ -5,38 +5,30 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class NGOService {
-
-  apiUrl:string="http://localhost:8086/WESpringBoot/ngo";
+export class HostelService {
+  apiUrl:string="http://localhost:8086/WESpringBoot/Hostel";
   constructor(private http:HttpClient) { }
-
-  // TO list all ngos 
-  getAll():Observable<any>
+  getAll()
   {
     return this.http.get(`${this.apiUrl}`);
   }
-
   getById(id:any):Observable<any>
   {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
 
-  //To Add NGOs
   create(data:any):Observable<any>{
     let API = `${this.apiUrl}`;
     return this.http.post(API,data);
   }
 
-  //To update NGO
   update(id:any,data:any):Observable<any>
   {
     return this.http.put(`${this.apiUrl}/${id}`,data);
   }
-
-  //TO delete NGO
   delete(id:any):Observable<any>
   {
     return this.http.delete(`${this.apiUrl}/${id}`, { responseType: 'text' });
   }
-
+  
 }

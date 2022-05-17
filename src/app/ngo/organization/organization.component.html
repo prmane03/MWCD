@@ -1,5 +1,6 @@
-<p>organization works!</p>
-<div class="container-fluid" id="registration-step">
+
+<body>
+<div class="container-fluid">
     <h2 class="text-center h2-responsive p-3">List of organizations registered with us are: </h2>
     <div class="row container-fluid">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" *ngFor="let x of ngo">
@@ -11,25 +12,21 @@
                     <table class="table table-striped">
                         <tr>
                             <th>Organization Type</th>
-                            <td>{{x.organizationType}}</td>
+                            <td>{{x.type}}</td>
                         </tr>
                         <tr>
                             <th>Address</th>
-                            <td>{{x.address}}</td>
-                        </tr>
-                        <tr>
-                            <th>Contact No</th>
-                            <td>{{x.contactNo}}</td>
+                            <td>{{x.addressLine}}</td>
                         </tr>
 
                     </table>
                 </div>
                 <div class="card-footer">
-                    <p class="text-center p-2 lead">Project Incharge: {{x.projectInCharge}}</p>
+                    <p class="text-center p-2 lead">Director: {{x.director}}</p>
                 </div>
             </div>
             <br>
         </div>
     </div>
 </div>
-<br>
+</body>

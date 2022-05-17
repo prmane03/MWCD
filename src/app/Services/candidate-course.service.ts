@@ -1,17 +1,17 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
   providedIn: 'root'
 })
-export class NGOService {
+export class CandidateCourseService {
 
-  apiUrl:string="http://localhost:8086/WESpringBoot/ngo";
+  apiUrl:string="http://localhost:8086/WESpringBoot/candidatecourses";
   constructor(private http:HttpClient) { }
 
-  // TO list all ngos 
-  getAll():Observable<any>
+  // TO list all candidatecourses 
+  getAll()
   {
     return this.http.get(`${this.apiUrl}`);
   }
@@ -21,22 +21,21 @@ export class NGOService {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
 
-  //To Add NGOs
+  //To Add candidatecourses
   create(data:any):Observable<any>{
     let API = `${this.apiUrl}`;
     return this.http.post(API,data);
   }
 
-  //To update NGO
+  //To update a candidatecourses
   update(id:any,data:any):Observable<any>
   {
     return this.http.put(`${this.apiUrl}/${id}`,data);
   }
 
-  //TO delete NGO
+  //TO delete a candidatecourses
   delete(id:any):Observable<any>
   {
     return this.http.delete(`${this.apiUrl}/${id}`, { responseType: 'text' });
   }
-
 }

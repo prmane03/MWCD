@@ -20,6 +20,10 @@ import { OrganizationComponent } from './ngo/organization/organization.component
 import { FundingComponent } from './ngo/funding/funding.component';
 import { NgoregisterComponent } from './ngo/ngoregister/ngoregister.component';
 import { NgostatusComponent } from './ngo/ngostatus/ngostatus.component';
+import { CandidateComponent } from './admin/candidate/candidate.component';
+import { AdminNgoComponent } from './admin/admin-ngo/admin-ngo.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AddNgoComponent } from './admin/add-ngo/add-ngo.component';
 
 @NgModule({
   declarations: [
@@ -40,11 +44,15 @@ import { NgostatusComponent } from './ngo/ngostatus/ngostatus.component';
     OrganizationComponent,
     FundingComponent,
     NgoregisterComponent,
-    NgostatusComponent
+    NgostatusComponent,
+    CandidateComponent,
+    AdminNgoComponent,
+    AddNgoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

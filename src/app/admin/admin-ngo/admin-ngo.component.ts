@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { NGOService } from 'src/app/Services/ngo.service';
 
 @Component({
-  selector: 'app-organization',
-  templateUrl: './organization.component.html',
-  styleUrls: ['./organization.component.css']
+  selector: 'app-admin-ngo',
+  templateUrl: './admin-ngo.component.html',
+  styleUrls: ['./admin-ngo.component.css']
 })
-export class OrganizationComponent implements OnInit {
-  
+export class AdminNgoComponent implements OnInit {
+
   public ngo:any[]; 
   constructor(public ms: NGOService ) {
   this.display();
@@ -23,6 +23,5 @@ export class OrganizationComponent implements OnInit {
           console.log(this.ngo);
       });
   }
-
 
 }
