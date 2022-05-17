@@ -58,7 +58,7 @@ const routes: Routes = [
   { path: 'funding', component: FundingComponent},
   { path: 'adminngo', component:  AdminNgoComponent},
   {path: 'ngostatus', component:NgostatusComponent},
-  { path: 'auth',children :
+  { path: 'ngo',children :
 
   [
       {path: 'criteria', component: CriteriaComponent},

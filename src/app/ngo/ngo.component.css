@@ -27,3 +27,18 @@ a:link, a:visited {
     background-image: linear-gradient(rgb(251, 251, 251), rgb(243, 241, 241), rgb(234, 231, 231));
    
   }
+
+  #nav {
+    width:750px;
+    margin:0 auto;
+    list-style:none;
+    }
+    #nav li {
+    float:left;
+    }
+    #nav a {
+    display:block;
+    text-align:center;
+    width:150px; /* fixed width */
+    text-decoration:none; 
+    }
