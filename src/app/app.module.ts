@@ -17,8 +17,8 @@ import { LoginComponent } from './main/login/login.component';
 import { RegisterComponent } from './main/register/register.component';
 import { CandidateComponent } from './admin/candidate/candidate.component';
 import { AdminNgoComponent } from './admin/admin-ngo/admin-ngo.component';
-import { AddNgoComponent } from './add-ngo/add-ngo.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddNgoComponent } from './admin/add-ngo/add-ngo.component';
 
 @NgModule({
   declarations: [
