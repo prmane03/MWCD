@@ -51,7 +51,8 @@ export class RegisterComponent implements OnInit {
         if(this.accPresent){
           alert('account is already present');
         }else{
-          this.as.create(this.user);
+          console.log(JSON.stringify(this.user));
+          this.as.create(JSON.stringify(this.user));
           alert('registered Successfully !');
           this.router.navigate(['/auth/login','admins']);
         }
@@ -63,7 +64,8 @@ export class RegisterComponent implements OnInit {
       if(this.accPresent){
         alert('account is already present');
       }else{
-        this.cs.create(this.user);
+        console.log(JSON.stringify(this.user));
+        this.cs.create(JSON.stringify(this.user));
         alert('registered Successfully !');
           this.router.navigate(['/auth/login','candidates']);
       }
@@ -75,20 +77,21 @@ export class RegisterComponent implements OnInit {
       if(this.accPresent){
         alert('account is already present');
       }else{
-        this.ns.create(this.user);
+        console.log(JSON.stringify(this.user));
+        this.ns.create(JSON.stringify(this.user));
         alert('registered Successfully !');
           this.router.navigate(['/auth/login','ngo']);
       }
     }    
   }
 
-  myItem: any;
-  storeName() {
-    localStorage.setItem('email', 'Angular');
-    localStorage.setItem('password', 'Angular');
-    // this.myItem = localStorage.getItem(this.key);
-  }
-  deleteName() {
-    localStorage.clear();
-  }
+  // myItem: any;
+  // storeName() {
+  //   localStorage.setItem('email', 'Angular');
+  //   localStorage.setItem('password', 'Angular');
+  //   // this.myItem = localStorage.getItem(this.key);
+  // }
+  // deleteName() {
+  //   localStorage.clear();
+  // }
 }

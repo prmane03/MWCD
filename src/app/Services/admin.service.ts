@@ -33,7 +33,7 @@ export class AdminService {
   //To Add admins
   create(data:any):Observable<any>{
     let API = `${this.apiUrl}`;
-    return this.http.post(API,data);
+    return this.http.post(API,JSON.stringify(data));
   }
 
   //To update a admin
