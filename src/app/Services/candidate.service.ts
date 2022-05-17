@@ -26,6 +26,11 @@ export class CandidateService {
     return this.http.get(`http://localhost:8086/WESpringBoot/candidatesByEmail/${email}`);
   }
 
+  fetchByEmail(email:String):Observable<any>
+  {
+    return this.http.get(`http://localhost:8086/WESpringBoot/getCandidatesByEmail/${email}`);
+  }
+
   //To Add Candidates
   create(data:any):Observable<any>{
     let API = `${this.apiUrl}`;
