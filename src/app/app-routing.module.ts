@@ -7,10 +7,16 @@ import { HomeComponent } from './main/home/home.component';
 import { HostelComponent } from './main/hostel/hostel.component';
 import { LegislationComponent } from './main/legislation/legislation.component';
 import { LoginComponent } from './main/login/login.component';
-import { NgoComponent } from './main/ngo/ngo.component';
+import { NgoComponent } from './ngo/ngo.component';
 import { RegisterComponent } from './main/register/register.component';
 import { StepComponent } from './main/step/step.component';
 import { SukanyaComponent } from './main/sukanya/sukanya.component';
+import { NgoregisterComponent } from './ngo/ngoregister/ngoregister.component';
+import { CriteriaComponent } from './ngo/criteria/criteria.component';
+import { NgostatusComponent } from './ngo/ngostatus/ngostatus.component';
+import { OrganizationComponent } from './ngo/organization/organization.component';
+import { FundingComponent } from './ngo/funding/funding.component';
+
 
 const routes: Routes = [
 
@@ -25,6 +31,12 @@ const routes: Routes = [
   { path: 'hostel', component: HostelComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'ngoregister', component: NgoregisterComponent },
+  { path: 'criteria', component:CriteriaComponent },
+  { path: 'ngostatus', component: NgostatusComponent },
+  { path: 'organization', component: OrganizationComponent},
+  { path: 'funding', component: FundingComponent}
+
 
 ];
 

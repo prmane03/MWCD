@@ -8,18 +8,18 @@ import { HomeComponent } from './main/home/home.component';
 import { AboutComponent } from './main/about/about.component';
 import { LegislationComponent } from './main/legislation/legislation.component';
 import { StepComponent } from './main/step/step.component';
-import { NgoComponent } from './main/ngo/ngo.component';
+import { NgoComponent } from './ngo/ngo.component';
 import { AdminComponent } from './main/admin/admin.component';
 import { HostelComponent } from './main/hostel/hostel.component';
 import { SukanyaComponent } from './main/sukanya/sukanya.component';
 import { FaqComponent } from './main/faq/faq.component';
 import { LoginComponent } from './main/login/login.component';
 import { RegisterComponent } from './main/register/register.component';
-import { CriteriaComponent } from './main/ngo/ngo/criteria/criteria.component';
-import { OrganizationComponent } from './main/ngo/organization/organization.component';
-import { FundingComponent } from './main/ngo/funding/funding.component';
-import { NgoregisterComponent } from './main/ngo/ngoregister/ngoregister.component';
-import { NgostatusComponent } from './main/ngo/ngostatus/ngostatus.component';
+import { CriteriaComponent } from './ngo/criteria/criteria.component';
+import { OrganizationComponent } from './ngo/organization/organization.component';
+import { FundingComponent } from './ngo/funding/funding.component';
+import { NgoregisterComponent } from './ngo/ngoregister/ngoregister.component';
+import { NgostatusComponent } from './ngo/ngostatus/ngostatus.component';
 
 @NgModule({
   declarations: [
