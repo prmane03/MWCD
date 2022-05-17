@@ -24,9 +24,13 @@ const routes: Routes = [
   { path: 'sukanya', component: SukanyaComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'hostel', component: HostelComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
   { path: 'adminngo', component:  AdminNgoComponent},
+  { path: 'auth',children : 
+  [
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent }
+  ] },
+  
 
 
 ];
