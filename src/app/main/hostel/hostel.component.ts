@@ -1,4 +1,6 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { HostelService } from 'src/app/Services/hostel.service';
 
 @Component({
   selector: 'app-hostel',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hostel.component.css']
 })
 export class HostelComponent implements OnInit {
+  
 
-  constructor() { }
+  constructor(private hostelService : HostelService) { }
 
   ngOnInit(): void {
+    
   }
-
+  
 }
