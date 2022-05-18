@@ -22,10 +22,12 @@ import { CriteriaComponent } from './ngo/criteria/criteria.component';
 import { NgostatusComponent } from './ngo/ngostatus/ngostatus.component';
 import { OrganizationComponent } from './ngo/organization/organization.component';
 import { FundingComponent } from './ngo/funding/funding.component';
+import { NgoHomeComponent } from './main/ngo-home/ngo-home.component';
 
 
 const routes: Routes = [
 
+  // main routes 
   { 
     path: '', 
     component: HomeComponent , 
@@ -37,25 +39,24 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'legislation', component: LegislationComponent },
   { path: 'step', component: StepComponent },
-  { path: 'ngo', component: NgoComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'sukanya', component: SukanyaComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'hostel', component: HostelComponent },
+  {path: 'ngo', component:NgoHomeComponent},
+  
+  // admin routes 
   { path: 'admin',children:[
-    { path: 'adminngo', component:  AdminNgoComponent},
-  { path: 'add-ngo', component:  AddNgoComponent},
-  { path: 'update-ngo', component:  UpdateNgoComponent},
-  { path: 'add-candidate', component: AddCandidateComponent},
-  { path: 'update-candidate', component: UpdateCandidateComponent}
+      { path: 'adminngo', component:  AdminNgoComponent},
+      { path: 'add-ngo', component:  AddNgoComponent},
+      { path: 'update-ngo', component:  UpdateNgoComponent},
+      { path: 'add-candidate', component: AddCandidateComponent},
+      { path: 'update-candidate', component: UpdateCandidateComponent}
   ] },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
- 
-  { path: 'adminngo', component:  AdminNgoComponent},
- 
-  { path: 'ngo',children :
-
+  
+// ngo routes 
+{path: 'ngoDashboard', component:NgoComponent},
+  { path: 'ngoDashboard',children : 
   [
       {path: 'criteria', component: CriteriaComponent},
       {path: 'funding', component: FundingComponent},
@@ -64,7 +65,8 @@ const routes: Routes = [
       {path: 'ngostatus', component: NgostatusComponent},
     
   ]},
-  { path: 'adminngo', component:  AdminNgoComponent},
+
+  // login register routes 
   { path: 'auth',children : 
   [
     { path: 'login/:type', component: LoginComponent },

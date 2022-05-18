@@ -3,21 +3,29 @@
       <div class="row d-flex justify-content-center align-items-center h-100">
         
         <div class="col-md-8 col-lg-6 col-xl-4">
-          <form action="">
+          <form [formGroup]="form" (ngSubmit)="submit()">
             <h1 class="lead fw-normal my-3 text-center">Sign in</h1>
-            
+             
             <!-- Email input -->
             <div class="form-outline mb-4">
                 <label class="form-label" for="form3Example3">Email address</label>
               <input type="email" id="form3Example3" class="form-control"
-                placeholder="Enter a valid email address" />
+                placeholder="Enter a valid email address" formControlName="email"/>
+                <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                  <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+                  <div *ngIf="f['email'].errors && f['email'].errors['email']">Please, enter valid email address.</div>
+              </div>
             </div>
   
             <!-- Password input -->
             <div class="form-outline mb-3">
                 <label class="form-label" for="form3Example4">Password</label>
               <input type="password" id="form3Example4" class="form-control"
-                placeholder="Enter password" />
+                placeholder="Enter password" formControlName="password"/>
+                <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+                  <div *ngIf="f['password'].errors && f['password'].errors['required']">password is required.</div>
+                  <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Password should be 8 character long</div>
+              </div>
             </div>
   
             <div class="d-flex justify-content-between align-items-center">
