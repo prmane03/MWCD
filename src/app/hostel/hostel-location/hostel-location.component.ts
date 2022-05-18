@@ -11,6 +11,10 @@ export class HostelLocationComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
+
+  // getLocation():any
+
+
 
 }
