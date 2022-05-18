@@ -1,3 +1,6 @@
+
+<app-navbar></app-navbar>
+
 <form action=""  [formGroup]="form">
   <div class="mb-3 mt-3 col-md-3">
     <label for="email" class="form-label">Email:</label>
@@ -6,15 +9,6 @@
       <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
       <div *ngIf="f['email'].errors && f['email'].errors['minlength']">Email should be 3 character.</div>
       </div>
-
-    </div>
-    <div class="mb-3 col-md-3">
-      <label for="pwd" class="form-label">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" formControlName="password" name="pswd">
-      <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
-        <div *ngIf="f['password'].errors && f['password'].errors['required']">password is required.</div>
-        <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Password should be 8 character long</div>
-    </div>
 
 
     </div>

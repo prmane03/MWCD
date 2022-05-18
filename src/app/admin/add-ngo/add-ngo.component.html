@@ -1,3 +1,6 @@
+
+
+<app-navbar></app-navbar>
 <form action=""  [formGroup]="form">
   <div class="mb-3 mt-3 col-md-3">
     <label for="email" class="form-label">Email:</label>
@@ -6,8 +9,8 @@
       <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
       <div *ngIf="f['email'].errors && f['email'].errors['minlength']">Email should be 3 character.</div>
       </div>
-
-    </div>
+      </div>
+      
     <div class="mb-3 col-md-3">
       <label for="pwd" class="form-label">Password:</label>
       <input type="password" class="form-control" id="pwd" placeholder="Enter password" formControlName="password" name="pswd">
