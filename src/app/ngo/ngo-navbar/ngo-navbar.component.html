@@ -13,7 +13,7 @@
         <ul class="navbar-nav mr-auto" id="nav">
           <li class="nav-item ">
             <a href="#" routerLink="/ngoDashboard/criteria" routerLinkActive="active">Criteria</a>
-          </li>
+          </li> 
           <li class="nav-item">
             <a href="#" routerLink="/ngoDashboard/organization" routerLinkActive="active">Organizations</a>
           </li>
@@ -23,8 +23,11 @@
           <li class="nav-item">
             <a href="#" routerLink="/ngoDashboard/ngoregister" routerLinkActive="active">Register</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" routerLink="/ngoDashboard/ngostatus" routerLinkActive="active">Status</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="mt-2 text-danger" (click)="logout()" style="cursor:pointer">Logout</a>
           </li>
         </ul>
         <!-- <form class="form-inline">
