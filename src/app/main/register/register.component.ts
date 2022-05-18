@@ -1,3 +1,4 @@
+import { ConditionalExpr } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -32,53 +33,52 @@ export class RegisterComponent implements OnInit {
     return this.form.controls;
   }
   
-  user:any={
-    name:'',
-    password:'',
-    email:''
-  }
+  // user:any={
+  //   name:'',
+  //   password:'',
+  //   email:''
+  // }
   
-  accPresent:any;
-  submit(){
-    this.user.name= this.form.value['name'];
-    this.user.email= this.form.value['email'];
-    this.user.password= this.form.value['password'];
+  accPresent:boolean;
+  submit(usrdata:any){
+    // this.user.name= this.form.value['name'];
+    // this.user.email= this.form.value['email'];
+    // this.user.password= this.form.value['password'];
     if(this.role=='admins'){
-        this.as.getByEmail( this.user.email ).subscribe(data => {
+        this.as.getByEmail( usrdata.email ).subscribe(data => {
           this.accPresent = data;
           console.log(this.accPresent);
         });
         if(this.accPresent){
           alert('account is already present');
         }else{
-          console.log(JSON.stringify(this.user));
-          this.as.create(JSON.stringify(this.user));
-          alert('registered Successfully !');
+          console.log(usrdata);
+          this.as.create(usrdata).subscribe(response => alert(response));
           this.router.navigate(['/auth/login','admins']);
         }
     }else if(this.role='candidates'){
-      this.cs.getByEmail( this.user.email ).subscribe(data => {
+      this.cs.getByEmail( usrdata.email ).subscribe(data => {
         this.accPresent = data;
         console.log(this.accPresent);
       });
       if(this.accPresent){
         alert('account is already present');
       }else{
-        console.log(JSON.stringify(this.user));
-        this.cs.create(JSON.stringify(this.user));
+        console.log(JSON.stringify(usrdata));
+        this.cs.create(usrdata).subscribe(response => alert(response));
         alert('registered Successfully !');
           this.router.navigate(['/auth/login','candidates']);
       }
     }else if(this.role='ngo'){
-      this.ns.getByEmail( this.user.email ).subscribe(data => {
+      this.ns.getByEmail( usrdata.email ).subscribe(data => {
         this.accPresent = data;
         console.log(this.accPresent);
       });
       if(this.accPresent){
         alert('account is already present');
       }else{
-        console.log(JSON.stringify(this.user));
-        this.ns.create(JSON.stringify(this.user));
+        console.log(JSON.stringify(usrdata));
+        this.ns.create(usrdata).subscribe(response => alert(response));
         alert('registered Successfully !');
           this.router.navigate(['/auth/login','ngo']);
       }
