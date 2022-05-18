@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.role = params['type'];
-    });
+    }); 
   }
 
   // form validation

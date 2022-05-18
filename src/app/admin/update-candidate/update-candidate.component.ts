@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { CandidateService } from 'src/app/Services/candidate.service';
 
 @Component({
   selector: 'app-update-candidate',
@@ -8,9 +10,14 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class UpdateCandidateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cs:CandidateService,private route: ActivatedRoute) { }
 
+  id: number;
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+      this.getdata();
+    }); 
   }
 
   // form validation
@@ -25,8 +32,17 @@ export class UpdateCandidateComponent implements OnInit {
     return this.form.controls;
   }
 
-}
-function pattern(arg0: string): import("@angular/forms").ValidatorFn {
-  throw new Error('Function not implemented.');
+  candidate :any;
+  getdata(){
+    this.cs.getById(this.id).subscribe(response => this.candidate = response);
+  }
+
+  submit(candidatedata:any){
+    this.cs.update(this.id,candidatedata).subscribe(response => alert(response));
+    alert('Updated successfully!');
+  
+  }
 
 }
+
+

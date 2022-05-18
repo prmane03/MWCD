@@ -35,6 +35,7 @@ import { NgoHomeComponent } from './main/ngo-home/ngo-home.component';
 import { NgoNavbarComponent } from './ngo/ngo-navbar/ngo-navbar.component';
 import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
 import { AdminAboutComponent } from './admin/admin-about/admin-about.component';
+import { TrainingSectorComponent } from './step/training-sector/training-sector.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { AdminAboutComponent } from './admin/admin-about/admin-about.component';
     NgoHomeComponent,
     NgoNavbarComponent,
     AdminNavbarComponent,
-    AdminAboutComponent
+    AdminAboutComponent,
+    TrainingSectorComponent
   ],
   imports: [
     BrowserModule,

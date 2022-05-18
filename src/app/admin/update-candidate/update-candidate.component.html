@@ -7,7 +7,7 @@
 
       <div class="my-3 col">
           <label for="name" class="form-label">Name:</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter your name" formControlName="name" name="name">
+          <input type="text" class="form-control" id="name" placeholder="Enter your name" formControlName="name" value="" name="name">
           <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
             <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
             <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
@@ -16,7 +16,7 @@
 
         <div class="my-3 col">
           <label for="fathnam" class="form-label">Father's Name:</label>
-          <input type="text" class="form-control" id="fathnam" placeholder="Enter your father's name" formControlName="fathername" name="fathnam">
+          <input type="text" class="form-control" id="fathnam" placeholder="Enter your father's name" formControlName="fathername" value="" name="fathnam">
           <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
             <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
             <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
@@ -26,7 +26,7 @@
 
       <div class="mb-3">
         <label for="email" class="form-label">Email:</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter your email" formControlName="email" name="email">
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" formControlName="email" value="" name="email">
         <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
             <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
             <div *ngIf="f['email'].errors && f['email'].errors['minlength']">Email should be 3 character.</div>
@@ -35,7 +35,7 @@
 
       <div class="mb-3">
         <label for="pwd" class="form-label">Password:</label>
-        <input type="password" class="form-control" id="pwd" placeholder="Enter your password" formControlName="password" name="pswd">
+        <input type="password" class="form-control" id="pwd" placeholder="Enter your password" formControlName="password" value="" name="pswd">
         <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
             <div *ngIf="f['password'].errors && f['password'].errors['required']">password is required.</div>
             <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Password should be 8 character long</div>
@@ -50,12 +50,12 @@
 
           <div class="mb-3 col">
             <label for="mob" class="form-label">Mobile Number:</label>
-            <input type="text" class="form-control" id="mob" placeholder="Enter your mobile number" name="mob">
+            <input type="text" class="form-control" id="mob" placeholder="Enter your mobile number" value="" name="mob">
           </div>
           
           <div class="mb-3 col">
             <label for="aadh" class="form-label">Aadhar number:</label>
-            <input type="text" class="form-control" id="aadh" placeholder="Enter your aadhar number" name="aadh">
+            <input type="text" class="form-control" id="aadh" placeholder="Enter your aadhar number" value="" name="aadh">
           </div>
 
         <select class="form-select" aria-label="Default select example">
@@ -76,15 +76,15 @@
         <div class="row">
           <div class="mb-3 col">
             <label for="hqp" class="form-label">Highest Qualification Proof:</label>
-            <input type="file" class="form-control" id="hqp" placeholder="Enter your mobile number" name="hqp">
+            <input type="file" class="form-control" id="hqp" placeholder="Enter your mobile number" value="" name="hqp">
           </div><br>
           <div class="mb-3 col">
             <label for="ap" class="form-label">Aadhar Proof:</label>
-            <input type="file" class="form-control" id="ap" placeholder="Enter your mobile number" name="ap">
+            <input type="file" class="form-control" id="ap" placeholder="Enter your mobile number" value="" name="ap">
           </div><br>
           <div class="mb-3 col">
             <label for="ip" class="form-label">Income Proof:</label>
-            <input type="file" class="form-control" id="ip" placeholder="Enter your mobile number" name="ip">
+            <input type="file" class="form-control" id="ip" placeholder="Enter your mobile number" value="" name="ip">
           </div><br>
       
         </div>
