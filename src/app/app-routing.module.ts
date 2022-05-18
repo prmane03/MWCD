@@ -50,14 +50,14 @@ const routes: Routes = [
   { path: 'faq', component: FaqComponent },
   { path: 'hostel', component: HostelComponent },
   {
-    path: 'hostel', canActivate: [AuthGuard],children: [
+    path: 'hostel',  canActivate: [AuthGuard,RoleGuard] , data: {roles: ['candidates']},children: [
       { path: 'hostel-booking', component: HostelBookingComponent }
     ]
   },
 
   // admin routes 
   {
-    path: 'admin', canActivate: [AuthGuard],children: [
+    path: 'admin', canActivate: [AuthGuard,RoleGuard] , data: {roles: ['admins']},children: [
       { path: 'adminngo', component: AdminNgoComponent },
       { path: 'add-ngo', component: AddNgoComponent },
       { path: 'update-ngo/:id', component: UpdateNgoComponent },
@@ -71,7 +71,7 @@ const routes: Routes = [
   // ngo routes 
   { path: 'ngoDashboard', component: NgoComponent },
   {
-    path: 'ngoDashboard', canActivate: [AuthGuard], children:
+    path: 'ngoDashboard',  canActivate: [AuthGuard,RoleGuard] , data: {roles: ['ngo']}, children:
 
       [
         { path: 'criteria', component: CriteriaComponent },
