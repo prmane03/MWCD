@@ -31,6 +31,8 @@ import { UpdateCandidateComponent } from './admin/update-candidate/update-candid
 import { HostelLocationComponent } from './hostel/hostel-location/hostel-location.component';
 
 import { HostelBookingComponent } from './hostel/hostel-booking/hostel-booking.component';
+import { NgoHomeComponent } from './main/ngo-home/ngo-home.component';
+import { NgoNavbarComponent } from './ngo/ngo-navbar/ngo-navbar.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { HostelBookingComponent } from './hostel/hostel-booking/hostel-booking.c
     AddCandidateComponent,
     UpdateCandidateComponent,
     HostelLocationComponent,
-    HostelBookingComponent
+    HostelBookingComponent,
+    NgoHomeComponent,
+    NgoNavbarComponent
   ],
   imports: [
     BrowserModule,
