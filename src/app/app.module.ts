@@ -33,6 +33,8 @@ import { HostelLocationComponent } from './hostel/hostel-location/hostel-locatio
 import { HostelBookingComponent } from './hostel/hostel-booking/hostel-booking.component';
 import { NgoHomeComponent } from './main/ngo-home/ngo-home.component';
 import { NgoNavbarComponent } from './ngo/ngo-navbar/ngo-navbar.component';
+import { NgoinfoComponent } from './ngoinfo/ngoinfo.component';
+import { TrainingSectorComponent } from './training-sector/training-sector.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { NgoNavbarComponent } from './ngo/ngo-navbar/ngo-navbar.component';
     HostelLocationComponent,
     HostelBookingComponent,
     NgoHomeComponent,
-    NgoNavbarComponent
+    NgoNavbarComponent,
+    NgoinfoComponent,
+    TrainingSectorComponent
   ],
   imports: [
     BrowserModule,
