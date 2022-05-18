@@ -13,10 +13,10 @@ export class RoleGuard implements CanActivate {
   }
 
   private isAuthorized(route:ActivatedRouteSnapshot):boolean{
-    const roles = ['admins','candidates','ngo'];
+    const role = localStorage.getItem('role');
     const roleExp = route.data['roles'];
-    const roleMatch = roles.findIndex(role=>roleExp.indexOf(role)!==-1);
-    return (roleMatch<0)?false:true;
+    const roleMatch = roleExp.includes(role);
+    return roleMatch;
   }
   
 }

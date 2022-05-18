@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { NGOService } from 'src/app/Services/ngo.service';
 
 @Component({
   selector: 'app-update-ngo',
@@ -8,9 +10,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class UpdateNgoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ns:NGOService,private route: ActivatedRoute) { }
 
+  id: number;
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+    }); 
   }
 
   // form validation
@@ -18,11 +24,18 @@ export class UpdateNgoComponent implements OnInit {
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-    dir: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    director: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    address: new FormControl('', [Validators.required, Validators.minLength(25)]),
   });
 
   get f(){
     return this.form.controls;
+  }
+  
+  submit(ngodata:any){
+    this.ns.update(this.id,ngodata).subscribe(response => alert(response));
+    alert('Updated successfully!');
+  
   }
 
 }

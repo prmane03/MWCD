@@ -3,8 +3,8 @@
       <div class="row d-flex justify-content-center align-items-center h-100">
         
         <div class="col-md-8 col-lg-6 col-xl-4">
-          <form [formGroup]="form" (ngSubmit)="submit()">
-            <h1 class="lead fw-normal my-3 text-center">Sign in</h1>
+          <form #userLog = "ngForm" [formGroup]="form" (ngSubmit)="submit(userLog.value)">
+            <h1 class="lead fw-normal my-3 text-center">Sign as {{role}}</h1>
              
             <!-- Email input -->
             <div class="form-outline mb-4">
@@ -40,9 +40,9 @@
             </div>
   
             <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="button" class="btn btn-primary"
+              <button type="submit" class="btn btn-primary"
                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-              <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
+              <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a [routerLink]="['/auth/register','admins']" routerLinkActive="active"
                   class="link-danger">Register</a></p>
             </div>
   

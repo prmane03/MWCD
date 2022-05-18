@@ -22,6 +22,6 @@ export class AdminNgoComponent implements OnInit {
           this.ngo = data;
           console.log(this.ngo);
       });
-  }
+  } 
 
 }

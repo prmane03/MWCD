@@ -15,27 +15,13 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>xyz</td>
-                  <td>Mumbai</td>
-                  <td>Dinesh</td>
-                  <td>20</td>
-                  <td><button class="btn btn-primary btn-sm">Book</button></td>
-                </tr>
-                <tr>
-                  <td>abc</td>
-                  <td>Bangalore</td>
-                  <td>Anish</td>
-                  <td>30</td>
-                  <td><button class="btn btn-primary btn-sm">Book</button></td>
-                </tr>
-                <tr>
-                  <td>hijk</td>
-                  <td>Dehli</td>
-                  <td>Ajay</td>
-                  <td>0</td>
-                  <td><button class="btn btn-primary btn-sm" disabled>Book</button></td>
-                </tr>
+                <tr *ngFor="let x of users">
+                  <td>{{x.name | titlecase}}</td>
+                  <td>{{x.location | titlecase}}</td>
+                  <td>{{x.owner | titlecase}}</td>
+                  <td>{{x.vacancy}}</td>
+                  <td><button (click)="vacancyDecrementer(x.id)" [disabled]="x.vacancy==0" class="btn btn-primary btn-sm">Book</button></td>
+              </tr>
               </tbody>
             </table>
         </div>

@@ -33,8 +33,9 @@ import { HostelLocationComponent } from './hostel/hostel-location/hostel-locatio
 import { HostelBookingComponent } from './hostel/hostel-booking/hostel-booking.component';
 import { NgoHomeComponent } from './main/ngo-home/ngo-home.component';
 import { NgoNavbarComponent } from './ngo/ngo-navbar/ngo-navbar.component';
-import { NgoinfoComponent } from './ngoinfo/ngoinfo.component';
-import { TrainingSectorComponent } from './training-sector/training-sector.component';
+import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
+import { AdminAboutComponent } from './admin/admin-about/admin-about.component';
+import { TrainingSectorComponent } from './step/training-sector/training-sector.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,12 @@ import { TrainingSectorComponent } from './training-sector/training-sector.compo
     HostelBookingComponent,
     NgoHomeComponent,
     NgoNavbarComponent,
+<<<<<<< HEAD
     NgoinfoComponent,
+=======
+    AdminNavbarComponent,
+    AdminAboutComponent,
+>>>>>>> 2c044db028c92e2f58c6e376d6b2bb2ac9b54121
     TrainingSectorComponent
   ],
   imports: [

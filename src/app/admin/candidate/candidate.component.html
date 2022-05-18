@@ -1,2 +1,29 @@
-<app-navbar></app-navbar>
-<p>candidate works!</p>
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container">
+    <a class="btn btn-primary m-2" routerLink="/admin/add-candidate" routerLinkActive="active"> Add + </a>
+    <table class="table table-striped table-bordered">
+        <thead>
+          
+            <th>Name</th>
+            <th>Email</th>
+            <th>Director</th>
+            <th>Address</th>
+            <th>Type</th>
+            <th>Update</th>
+           
+        </thead>
+        <tbody>
+            <tr *ngFor="let x of candidate">
+              
+                <td>{{x.name}}</td>
+                <td>{{x.email}}</td>
+                <td>{{x.director}}</td>
+                <td>{{x.addressLine}}</td>
+                <td>{{x.type}}</td>
+                <td><a href="">Update</a></td>
+    
+            </tr>
+        </tbody>
+    </table>
+</div>

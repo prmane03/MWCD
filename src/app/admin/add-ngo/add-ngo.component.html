@@ -1,10 +1,9 @@
+<app-admin-navbar></app-admin-navbar>
 
-
-<app-navbar></app-navbar>
-<form action=""  [formGroup]="form">
+<form action=""  [formGroup]="form" (ngSubmit)="submit(addngo.value)" #addngo="ngForm">
   <div class="mb-3 mt-3 col-md-3">
     <label for="email" class="form-label">Email:</label>
-    <input type="email" class="form-control" id="email" placeholder="Enter email" formControlName="email" name="email">
+    <input name="email" type="email" class="form-control" id="email" placeholder="Enter email" formControlName="email" name="email">
     <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
       <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
       <div *ngIf="f['email'].errors && f['email'].errors['minlength']">Email should be 3 character.</div>
@@ -13,7 +12,7 @@
       
     <div class="mb-3 col-md-3">
       <label for="pwd" class="form-label">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" formControlName="password" name="pswd">
+      <input name="password" type="password" class="form-control" id="pwd" placeholder="Enter password" formControlName="password" name="pswd">
       <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
         <div *ngIf="f['password'].errors && f['password'].errors['required']">password is required.</div>
         <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Password should be 8 character long</div>
@@ -23,7 +22,7 @@
     </div>
     <div class="mb-3 col-md-3">
       <label for="name" class="form-label">Name:</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter name" formControlName="name" name="name">
+      <input name="name" type="text" class="form-control" id="name" placeholder="Enter name" formControlName="name" name="name">
       <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
         <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
         <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
@@ -32,14 +31,14 @@
 
       <div class="mb-3 col-md-3">
         <label for="dir" class="form-label">Director:</label>
-        <input type="text" class="form-control" id="dir" placeholder="Enter director's name" formControlName="director" name="dir">
-        <div *ngIf="f['dir'].touched && f['dir'].invalid" class="alert alert-danger">
-          <div *ngIf="f['dir'].errors && f['dir'].errors['required']">Director name is required.</div>
-          <div *ngIf="f['dir'].errors && f['dir'].errors['minlength']">Director name should be 3 character.</div>
+        <input name="director" type="text" class="form-control" id="dir" placeholder="Enter director's name" formControlName="director" name="dir">
+        <div *ngIf="f['director'].touched && f['director'].invalid" class="alert alert-danger">
+          <div *ngIf="f['director'].errors && f['director'].errors['required']">Director name is required.</div>
+          <div *ngIf="f['director'].errors && f['director'].errors['minlength']">Director name should be 3 character.</div>
         </div>
       </div>
 
-      <select class="form-select" aria-label="Default select example">
+      <select name="type" class="form-select" aria-label="Default select example">
         <option selected>Type</option>
         <option value="1">Charitable Orientation</option>
         <option value="2">Participatory Orientation</option>
@@ -47,12 +46,20 @@
         <option value="4">Servcie Orientation</option>
         </select><br>
 
-      <select class="form-select" aria-label="Default select example">
+        <div class="mb-3 col-md-3">
+          <label for="address" class="form-label">AddressLine:</label>
+          <input name="addressLine" type="text" class="form-control" id="dir" placeholder="Enter address" formControlName="address" name="address">
+          <div *ngIf="f['address'].touched && f['address'].invalid" class="alert alert-danger">
+            <div *ngIf="f['address'].errors && f['address'].errors['required']">address is required.</div>
+          </div>
+        </div><br>
+
+      <select name="country" class="form-select" aria-label="Default select example">
         <option selected>Select Country</option>
         <option value="1">India</option>
       </select><br>
 
-      <select class="form-select" aria-label="Default select example">
+      <select name="state" class="form-select" aria-label="Default select example">
         <option selected>Select State</option>
         <option value="1">Andhra Pradesh</option>
         <option value="2">Tamilnadu</option>

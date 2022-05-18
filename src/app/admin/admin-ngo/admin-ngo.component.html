@@ -1,25 +1,29 @@
-<app-navbar></app-navbar>
-<p>admin-ngo works!</p>
+<app-admin-navbar></app-admin-navbar>
 
-<table class="table table-striped table-bordered">
-    <thead>
-      
-        <th>Name</th>
-        <th>Email</th>
-        <th>Director</th>
-        <th>Address</th>
-        <th>Type</th>
-       
-    </thead>
-    <tbody>
-        <tr *ngFor="let x of ngo">
+<div class="container">
+    <a class="btn btn-primary m-2" routerLink="/admin/add-ngo" routerLinkActive="active"> Add + </a>
+    <table class="table table-striped table-bordered">
+        <thead>
           
-            <td>{{x.name}}</td>
-            <td>{{x.email}}</td>
-            <td>{{x.director}}</td>
-            <td>{{x.addressLine}}</td>
-            <td>{{x.type}}</td>
-
-        </tr>
-    </tbody>
-</table>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Director</th>
+            <th>Address</th>
+            <th>Type</th>
+            <th>Update</th>
+           
+        </thead>
+        <tbody>
+            <tr *ngFor="let x of ngo">
+              
+                <td>{{x.name}}</td>
+                <td>{{x.email}}</td>
+                <td>{{x.director}}</td>
+                <td>{{x.addressLine}}</td>
+                <td>{{x.type}}</td>
+                <td><a [routerLink]="['/admin/update-ngo',x.nid]" routerLinkActive="active">Update</a></td>
+    
+            </tr>
+        </tbody>
+    </table>
+</div>
