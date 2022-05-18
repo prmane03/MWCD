@@ -79,6 +79,36 @@ const routes: Routes = [
       ]
   },
 
+  {path: 'ngo', component:NgoHomeComponent},
+  
+  // admin routes 
+  { path: 'admin',children:[
+      { path: 'adminngo', component:  AdminNgoComponent},
+      { path: 'add-ngo', component:  AddNgoComponent},
+      { path: 'update-ngo', component:  UpdateNgoComponent},
+      { path: 'add-candidate', component: AddCandidateComponent},
+      { path: 'update-candidate', component: UpdateCandidateComponent}
+  ] },
+  
+// ngo routes 
+{path: 'ngoDashboard', component:NgoComponent},
+  { path: 'ngoDashboard',children : 
+  [
+      {path: 'criteria', component: CriteriaComponent},
+      {path: 'funding', component: FundingComponent},
+      {path: 'organization', component: OrganizationComponent},
+      {path: 'ngoregister', component: NgoregisterComponent},
+      {path: 'ngostatus', component: NgostatusComponent},
+    
+  ]},
+
+  // login register routes 
+  { path: 'auth',children : 
+  [
+    { path: 'login/:type', component: LoginComponent },
+    { path: 'register/:type', component: RegisterComponent }
+  ] },
+  
 
 
 ];
