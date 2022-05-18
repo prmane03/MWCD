@@ -51,6 +51,7 @@
           <input name="addressLine" type="text" class="form-control" id="dir" placeholder="Enter address" formControlName="address" name="address">
           <div *ngIf="f['address'].touched && f['address'].invalid" class="alert alert-danger">
             <div *ngIf="f['address'].errors && f['address'].errors['required']">address is required.</div>
+            <div *ngIf="f['address'].errors && f['address'].errors['minlength']">min 25 chars required.</div>
           </div>
         </div><br>
 
