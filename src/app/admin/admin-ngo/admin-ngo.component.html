@@ -4,16 +4,20 @@
     <thead>
       
         <th>Name</th>
+        <th>Email</th>
         <th>Director</th>
         <th>Address</th>
+        <th>Type</th>
        
     </thead>
     <tbody>
         <tr *ngFor="let x of ngo">
           
             <td>{{x.name}}</td>
+            <td>{{x.email}}</td>
             <td>{{x.director}}</td>
             <td>{{x.addressLine}}</td>
+            <td>{{x.type}}</td>
 
         </tr>
     </tbody>
