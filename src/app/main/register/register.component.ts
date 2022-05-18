@@ -33,22 +33,13 @@ export class RegisterComponent implements OnInit {
     return this.form.controls;
   }
   
-  // user:any={
-  //   name:'',
-  //   password:'',
-  //   email:''
-  // }
-  
-  accPresent:boolean;
+  public accPresent:boolean;
   submit(usrdata:any){
-    // this.user.name= this.form.value['name'];
-    // this.user.email= this.form.value['email'];
-    // this.user.password= this.form.value['password'];
     if(this.role=='admins'){
-        this.as.getByEmail( usrdata.email ).subscribe(data => {
-          this.accPresent = data;
-          console.log(this.accPresent);
-        });
+      this.as.getByEmail( usrdata.email ).subscribe((data)=>{
+        this.accPresent= data;
+
+        console.log(this.accPresent);
         if(this.accPresent){
           alert('account is already present');
         }else{
@@ -56,32 +47,39 @@ export class RegisterComponent implements OnInit {
           this.as.create(usrdata).subscribe(response => alert(response));
           this.router.navigate(['/auth/login','admins']);
         }
+      });
+        
+        
     }else if(this.role='candidates'){
       this.cs.getByEmail( usrdata.email ).subscribe(data => {
         this.accPresent = data;
+
         console.log(this.accPresent);
+        if(this.accPresent){
+          alert('account is already present');
+        }else{
+          console.log(JSON.stringify(usrdata));
+          this.cs.create(usrdata).subscribe(response => alert(response));
+          alert('registered Successfully !');
+            this.router.navigate(['/auth/login','candidates']);
+        }
       });
-      if(this.accPresent){
-        alert('account is already present');
-      }else{
-        console.log(JSON.stringify(usrdata));
-        this.cs.create(usrdata).subscribe(response => alert(response));
-        alert('registered Successfully !');
-          this.router.navigate(['/auth/login','candidates']);
-      }
+
+      
     }else if(this.role='ngo'){
       this.ns.getByEmail( usrdata.email ).subscribe(data => {
         this.accPresent = data;
+
         console.log(this.accPresent);
+        if(this.accPresent){
+          alert('account is already present');
+        }else{
+          console.log(JSON.stringify(usrdata));
+          this.ns.create(usrdata).subscribe(response => alert(response));
+            this.router.navigate(['/auth/login','ngo']);
+        }
       });
-      if(this.accPresent){
-        alert('account is already present');
-      }else{
-        console.log(JSON.stringify(usrdata));
-        this.ns.create(usrdata).subscribe(response => alert(response));
-        alert('registered Successfully !');
-          this.router.navigate(['/auth/login','ngo']);
-      }
+
     }    
   }
 

@@ -23,6 +23,7 @@ import { NgostatusComponent } from './ngo/ngostatus/ngostatus.component';
 import { OrganizationComponent } from './ngo/organization/organization.component';
 import { FundingComponent } from './ngo/funding/funding.component';
 import { HostelBookingComponent } from './hostel/hostel-booking/hostel-booking.component';
+import { NgoHomeComponent } from './main/ngo-home/ngo-home.component';
 
 
 const routes: Routes = [
@@ -30,7 +31,6 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    canActivate: [RoleGuard],
     data: {
       roles: ['admins', 'candidates', 'ngo']
     }
@@ -38,7 +38,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'legislation', component: LegislationComponent },
   { path: 'step', component: StepComponent },
-  { path: 'ngo', component: NgoComponent },
+  { path: 'ngo', component: NgoHomeComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'sukanya', component: SukanyaComponent },
   { path: 'faq', component: FaqComponent },
@@ -57,17 +57,10 @@ const routes: Routes = [
       { path: 'update-candidate', component: UpdateCandidateComponent }
     ]
   },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'ngoregister', component: NgoregisterComponent },
-  { path: 'criteria', component: CriteriaComponent },
-  { path: 'ngostatus', component: NgostatusComponent },
-  { path: 'organization', component: OrganizationComponent },
-  { path: 'funding', component: FundingComponent },
-  { path: 'adminngo', component: AdminNgoComponent },
-  { path: 'ngostatus', component: NgostatusComponent },
+  
+  { path: 'ngoDashboard', component: NgoComponent },
   {
-    path: 'auth', children:
+    path: 'ngoDashboard', children:
 
       [
         { path: 'criteria', component: CriteriaComponent },
@@ -78,7 +71,6 @@ const routes: Routes = [
 
       ]
   },
-  { path: 'adminngo', component: AdminNgoComponent },
   {
     path: 'auth', children:
       [

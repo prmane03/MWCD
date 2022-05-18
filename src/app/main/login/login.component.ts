@@ -31,77 +31,74 @@ export class LoginComponent implements OnInit {
     return this.form.controls;
   }
 
-  user: any = {
-    password: '',
-    email: ''
-  }
-
-  userdata: any;
   accPresent: any;
-  
-  submit() {
-    this.user.email = this.form.value['email'];
-    this.user.password = this.form.value['password'];
+  fetchedUser:any;
+
+  submit(userdata:any) {
 
     if (this.role == 'admins') {
-      this.as.getByEmail(this.user.email).subscribe(data => {
+      this.as.getByEmail(userdata.email).subscribe(data => {
         this.accPresent = data;
+
         console.log(this.accPresent);
-      });
-      if (!this.accPresent) {
-        alert('account is not present');
-      } else {
-        this.as.fetchByEmail(this.user.email).subscribe(data => {
-          this.userdata = data;
-        });
-        if (this.userdata.password == this.user.password) {
-          localStorage.setItem('email', this.user.email);
-          localStorage.setItem('password', this.user.password);
-          localStorage.setItem('role', 'admin');
-          this.router.navigate(['/auth/login', 'candidates']);
+        if (!this.accPresent) {
+          alert('account is not present');
         } else {
-          alert("Wrong PassWord");
+          this.as.fetchByEmail(userdata.email).subscribe(data => {
+            this.fetchedUser = data;
+            if (this.fetchedUser.password == userdata.password) {
+              localStorage.setItem('email', userdata.email);
+              localStorage.setItem('password', userdata.password);
+              localStorage.setItem('role', 'admin');
+              this.router.navigate(['/admin/adminngo']);
+            } else {
+              alert("Wrong PassWord");
+            }
+          });
         }
-      }
+      });
+      
     } else if (this.role = 'candidates') {
-      this.cs.getByEmail(this.user.email).subscribe(data => {
+      this.cs.getByEmail(userdata.email).subscribe(data => {
         this.accPresent = data;
         console.log(this.accPresent);
       });
       if (!this.accPresent) {
         alert('account is not present');
       } else {
-        this.cs.fetchByEmail(this.user.email).subscribe(data => {
-          this.userdata = data;
+        this.cs.fetchByEmail(userdata.email).subscribe(data => {
+          this.fetchedUser = data;
+          if (this.fetchedUser.password == userdata.password) {
+            localStorage.setItem('email', userdata.email);
+            localStorage.setItem('password', userdata.password);
+            localStorage.setItem('role', 'candidate');
+            this.router.navigate(['/step']);
+          } else {
+            alert("Wrong PassWord");
+          }
         });
-        if (this.userdata.password == this.user.password) {
-          localStorage.setItem('email', this.user.email);
-          localStorage.setItem('password', this.user.password);
-          localStorage.setItem('role', 'candidate');
-          this.router.navigate(['/auth/login', 'candidates']);
-        } else {
-          alert("Wrong PassWord");
-        }
+        
       }
     } else if (this.role = 'ngo') {
-      this.ns.getByEmail(this.user.email).subscribe(data => {
+      this.ns.getByEmail(userdata.email).subscribe(data => {
         this.accPresent = data;
         console.log(this.accPresent);
       });
       if (!this.accPresent) {
         alert('account is not present');
       } else {
-        this.ns.fetchByEmail(this.user.email).subscribe(data => {
-          this.userdata = data;
+        this.ns.fetchByEmail(userdata.email).subscribe(data => {
+          this.fetchedUser = data;
+          if (this.fetchedUser.password == userdata.password) {
+            localStorage.setItem('email', userdata.email);
+            localStorage.setItem('password', userdata.password);
+            localStorage.setItem('role', 'ngo');
+            this.router.navigate(['/ngoDashboard']);
+          } else {
+            alert("Wrong PassWord");
+          }
         });
-        if (this.userdata.password == this.user.password) {
-          localStorage.setItem('email', this.user.email);
-          localStorage.setItem('password', this.user.password);
-          localStorage.setItem('role', 'ngo');
-          this.router.navigate(['/auth/login', 'ngo']);
-        } else {
-          alert("Wrong PassWord");
-        }
+        
       }
     }
   }
