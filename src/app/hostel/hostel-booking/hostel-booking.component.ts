@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-hostel-booking',
   templateUrl: './hostel-booking.component.html',

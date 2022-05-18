@@ -11,10 +11,19 @@ import { HostelLocationComponent } from 'src/app/hostel/hostel-location/hostel-l
 export class HostelComponent implements OnInit {
   
 
-  constructor(private hostelService : HostelService) { }
-
+  constructor(private hostelService: HostelService ) { }
+  users:any;
   ngOnInit(): void {
-    
   }
+  public  getHostel():void{
+    this.hostelService.getAll().subscribe((data)=>{
+
+      this.users=data
+      console.log(this.users)
+     }
+      )
+  }
+  
+  
   
 }
