@@ -50,7 +50,7 @@ export class RegisterComponent implements OnInit {
       });
         
         
-    }else if(this.role='candidates'){
+    }else if(this.role=='candidates'){
       this.cs.getByEmail( usrdata.email ).subscribe(data => {
         this.accPresent = data;
 
@@ -66,7 +66,7 @@ export class RegisterComponent implements OnInit {
       });
 
       
-    }else if(this.role='ngo'){
+    }else if(this.role=='ngo'){
       this.ns.getByEmail( usrdata.email ).subscribe(data => {
         this.accPresent = data;
 

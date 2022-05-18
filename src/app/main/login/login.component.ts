@@ -31,24 +31,27 @@ export class LoginComponent implements OnInit {
     return this.form.controls;
   }
 
-  accPresent: any;
+  // accPresent: any;
   fetchedUser:any;
 
   submit(userdata:any) {
 
     if (this.role == 'admins') {
-      this.as.getByEmail(userdata.email).subscribe(data => {
-        this.accPresent = data;
+      this.as.getByEmail(userdata.email).subscribe(accPresent => {
+        // this.accPresent = data;
 
-        console.log(this.accPresent);
-        if (!this.accPresent) {
+        // console.log(this.accPresent);
+        if (!accPresent) {
           alert('account is not present');
         } else {
           this.as.fetchByEmail(userdata.email).subscribe(data => {
             this.fetchedUser = data;
             if (this.fetchedUser.password == userdata.password) {
-              localStorage.setItem('email', userdata.email);
-              localStorage.setItem('password', userdata.password);
+              localStorage.setItem('user',this.fetchedUser);
+              localStorage.setItem('id',this.fetchedUser.id);
+              localStorage.setItem('password',this.fetchedUser.password);
+              localStorage.setItem('email',this.fetchedUser.email);
+              localStorage.setItem('name',this.fetchedUser.name);
               localStorage.setItem('role', 'admin');
               this.router.navigate(['/admin/adminngo']);
             } else {
@@ -58,48 +61,53 @@ export class LoginComponent implements OnInit {
         }
       });
       
-    } else if (this.role = 'candidates') {
-      this.cs.getByEmail(userdata.email).subscribe(data => {
-        this.accPresent = data;
-        console.log(this.accPresent);
+    } else if (this.role == 'candidates') {
+      this.cs.getByEmail(userdata.email).subscribe(accPresent => {
+        // this.accPresent = data;
+        console.log(accPresent);
+        if (!accPresent) {
+          alert('account is not present');
+        } else {
+          this.cs.fetchByEmail(userdata.email).subscribe(data => {
+            this.fetchedUser = data;
+            if (this.fetchedUser.password == userdata.password) {
+              localStorage.setItem('user',this.fetchedUser);
+              localStorage.setItem('id',this.fetchedUser.id);
+              localStorage.setItem('password',this.fetchedUser.password);
+              localStorage.setItem('email',this.fetchedUser.email);
+              localStorage.setItem('role', 'candidate');
+              this.router.navigate(['/step/training-sectors']);
+            } else {
+              alert("Wrong PassWord");
+            }
+          });
+          
+        }
       });
-      if (!this.accPresent) {
-        alert('account is not present');
-      } else {
-        this.cs.fetchByEmail(userdata.email).subscribe(data => {
-          this.fetchedUser = data;
-          if (this.fetchedUser.password == userdata.password) {
-            localStorage.setItem('email', userdata.email);
-            localStorage.setItem('password', userdata.password);
-            localStorage.setItem('role', 'candidate');
-            this.router.navigate(['/step/training-sectors']);
-          } else {
-            alert("Wrong PassWord");
-          }
-        });
-        
-      }
-    } else if (this.role = 'ngo') {
-      this.ns.getByEmail(userdata.email).subscribe(data => {
-        this.accPresent = data;
-        console.log(this.accPresent);
+    } else if (this.role == 'ngo') {
+      this.ns.getByEmail(userdata.email).subscribe(accPresent => {
+        // this.accPresent = data;
+        // console.log(this.accPresent);
+        if (!accPresent) {
+          alert('account is not present');
+        } else {
+          this.ns.fetchByEmail(userdata.email).subscribe(data => {
+            this.fetchedUser = data;
+            if (this.fetchedUser.password == userdata.password) {
+              localStorage.setItem('user',this.fetchedUser);
+              localStorage.setItem('id',this.fetchedUser.nid);
+              localStorage.setItem('password',this.fetchedUser.password);
+              localStorage.setItem('email',this.fetchedUser.email);
+              localStorage.setItem('stepStatus',this.fetchedUser.stepStatus);
+              localStorage.setItem('role', 'ngo');
+              this.router.navigate(['/ngoDashboard']);
+            } else {
+              alert("Wrong PassWord");
+            }
+          });
+          
+        }
       });
-      if (!this.accPresent) {
-        alert('account is not present');
-      } else {
-        this.ns.fetchByEmail(userdata.email).subscribe(data => {
-          this.fetchedUser = data;
-          if (this.fetchedUser.password == userdata.password) {
-            localStorage.setItem('email', userdata.email);
-            localStorage.setItem('password', userdata.password);
-            localStorage.setItem('role', 'ngo');
-            this.router.navigate(['/ngoDashboard']);
-          } else {
-            alert("Wrong PassWord");
-          }
-        });
-        
-      }
     }
   }
 

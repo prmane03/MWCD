@@ -28,6 +28,7 @@ import { CandidateComponent } from './admin/candidate/candidate.component';
 import { AdminAboutComponent } from './admin/admin-about/admin-about.component';
 import { NgoinfoComponent } from './step/ngoinfo/ngoinfo.component';
 import { TrainingSectorComponent } from './step/training-sector/training-sector.component';
+import { AuthGuard } from './Guard/auth.guard';
 
 
 const routes: Routes = [
@@ -49,14 +50,14 @@ const routes: Routes = [
   { path: 'faq', component: FaqComponent },
   { path: 'hostel', component: HostelComponent },
   {
-    path: 'hostel', children: [
+    path: 'hostel',  canActivate: [AuthGuard,RoleGuard] , data: {roles: ['candidates']},children: [
       { path: 'hostel-booking', component: HostelBookingComponent }
     ]
   },
 
   // admin routes 
   {
-    path: 'admin', children: [
+    path: 'admin', canActivate: [AuthGuard,RoleGuard] , data: {roles: ['admins']},children: [
       { path: 'adminngo', component: AdminNgoComponent },
       { path: 'add-ngo', component: AddNgoComponent },
       { path: 'update-ngo/:id', component: UpdateNgoComponent },
@@ -70,7 +71,7 @@ const routes: Routes = [
   // ngo routes 
   { path: 'ngoDashboard', component: NgoComponent },
   {
-    path: 'ngoDashboard', children:
+    path: 'ngoDashboard',  canActivate: [AuthGuard,RoleGuard] , data: {roles: ['ngo']}, children:
 
       [
         { path: 'criteria', component: CriteriaComponent },
