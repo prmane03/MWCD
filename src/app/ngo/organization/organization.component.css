@@ -1,9 +1,25 @@
-body{
+/* body{
     background-image: linear-gradient(rgb(251, 251, 251), rgb(243, 241, 241), rgb(234, 231, 231));
    
-  }
+  } */
   h2{
     text-align: center;
     color: rgb(175, 166, 166);
     background-color:rgb(38, 38, 38);
+  }
+
+  table {
+    width: 50%;
+    counter-reset: row-num;
+  }
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  table, th, td {    
+    
+    margin-left: auto;  
+    margin-right: auto;   
+    width: 500px;  
+    text-align: center; 
   }
