@@ -62,7 +62,7 @@ export class NgoregisterComponent implements OnInit {
   country:string;
   type:string;
   
-  submit(ngodata:any){
+  
     // this.name= this.form.value['name'];
     // this.email= this.form.value['email'];
     // this.password= this.form.value['password'];
@@ -72,11 +72,24 @@ export class NgoregisterComponent implements OnInit {
     // this.state= this.form.value['state'];
     // this.country= this.form.value['country'];
     // this.type= this.form.value['type'];
-    this.ng.create(ngodata).subscribe(response => alert(response));
-          alert('registered Successfully !');
-
+    
+    public ngoPre:boolean;
+    submit(ngodata:any){
+    if(this.role=='ngos'){
+      this.ng.getByEmail( ngodata.email ).subscribe((data)=>{
+        this.ngoPre= data;
+        console.log(this.ngoPre);
+        if(this.ngoPre){
+          alert('Account is already present');
+        }else{
+          console.log(ngodata);
+           this.ng.create(ngodata).subscribe(response => alert(response));
+          alert('Registered Successfully !');
+           }
+      });
+    }
   }
-
+}
   // myItem: any;
   // storeName() {
   //   localStorage.setItem('email', 'Angular');
@@ -86,8 +99,6 @@ export class NgoregisterComponent implements OnInit {
   // deleteName() {
   //   localStorage.clear();
   // }
-}
 
 
-  
 

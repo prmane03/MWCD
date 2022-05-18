@@ -36,6 +36,8 @@ import { NgoNavbarComponent } from './ngo/ngo-navbar/ngo-navbar.component';
 import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
 import { AdminAboutComponent } from './admin/admin-about/admin-about.component';
 import { TrainingSectorComponent } from './step/training-sector/training-sector.component';
+import { StepNavbarComponent } from './step/step-navbar/step-navbar.component';
+import { NgoinfoComponent } from './step/ngoinfo/ngoinfo.component';
 
 @NgModule({
   declarations: [
@@ -67,13 +69,13 @@ import { TrainingSectorComponent } from './step/training-sector/training-sector.
     HostelBookingComponent,
     NgoHomeComponent,
     NgoNavbarComponent,
-<<<<<<< HEAD
+
     NgoinfoComponent,
-=======
+
     AdminNavbarComponent,
     AdminAboutComponent,
->>>>>>> 2c044db028c92e2f58c6e376d6b2bb2ac9b54121
-    TrainingSectorComponent
+    TrainingSectorComponent,
+    StepNavbarComponent
   ],
   imports: [
     BrowserModule,

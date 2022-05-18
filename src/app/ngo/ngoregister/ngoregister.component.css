@@ -23,14 +23,13 @@ ul li {
     line-height: 1.6em;
     text-align: justify;
 }
-
-body{
-    background-image: linear-gradient(rgb(251, 251, 251), rgb(243, 241, 241), rgb(234, 231, 231));
-   
-  }
-
-  h2{
+  h3{
     text-align: center;
-    color: rgb(175, 166, 166);
-    background-color:rgb(38, 38, 38);
+    color: rgb(9, 9, 9);
+    
+    
+  }
+  body{
+    background: linear-gradient(rgb(156, 203, 234), 10%,white);
+   
   }
