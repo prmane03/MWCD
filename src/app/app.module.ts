@@ -33,6 +33,8 @@ import { HostelLocationComponent } from './hostel/hostel-location/hostel-locatio
 import { HostelBookingComponent } from './hostel/hostel-booking/hostel-booking.component';
 import { NgoHomeComponent } from './main/ngo-home/ngo-home.component';
 import { NgoNavbarComponent } from './ngo/ngo-navbar/ngo-navbar.component';
+import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
+import { AdminAboutComponent } from './admin/admin-about/admin-about.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { NgoNavbarComponent } from './ngo/ngo-navbar/ngo-navbar.component';
     HostelLocationComponent,
     HostelBookingComponent,
     NgoHomeComponent,
-    NgoNavbarComponent
+    NgoNavbarComponent,
+    AdminNavbarComponent,
+    AdminAboutComponent
   ],
   imports: [
     BrowserModule,

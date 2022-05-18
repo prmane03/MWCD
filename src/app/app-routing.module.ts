@@ -24,6 +24,8 @@ import { OrganizationComponent } from './ngo/organization/organization.component
 import { FundingComponent } from './ngo/funding/funding.component';
 import { HostelBookingComponent } from './hostel/hostel-booking/hostel-booking.component';
 import { NgoHomeComponent } from './main/ngo-home/ngo-home.component';
+import { CandidateComponent } from './admin/candidate/candidate.component';
+import { AdminAboutComponent } from './admin/admin-about/admin-about.component';
 
 
 const routes: Routes = [
@@ -54,7 +56,9 @@ const routes: Routes = [
       { path: 'add-ngo', component: AddNgoComponent },
       { path: 'update-ngo', component: UpdateNgoComponent },
       { path: 'add-candidate', component: AddCandidateComponent },
-      { path: 'update-candidate', component: UpdateCandidateComponent }
+      { path: 'update-candidate', component: UpdateCandidateComponent },
+      { path: 'candidate', component: CandidateComponent },
+      { path: 'about', component: AdminAboutComponent }
     ]
   },
   
