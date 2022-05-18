@@ -1,8 +1,9 @@
+<app-ngo-navbar></app-ngo-navbar>
 <body>
-<div class="container-fluid" >
+
+<div class="container" >
 <div class="row">
-    <div>
-        <div class="">
+
             <div >
                 <div><h2>Registration</h2>
                   <br>
@@ -22,79 +23,86 @@
             </div>
             <br>
             <br>
-            <form class="row g-3 needs-validation" novalidate>
-                <div class="col-md-4 position-relative">
-                  <label for="validationTooltip01" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="validationTooltip01" value="" required>
-                  <div class="valid-tooltip">
-                    
-                  </div>
+            <form class="row g-3 needs-validation"  [formGroup]="form">
+                
+              <div class="col-md-4 position-relative">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="Enter Name"  formControlName="name" required/>
+                  <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
+                    <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
+                </div>
                 </div>
                 <br>
+
                 <div class="col-md-4 position-relative">
-                  <label for="validationTooltipUsername" class="form-label">Email</label>
-                  <div class="input-group has-validation">
-                    <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
-                    <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
-                    <div class="invalid-tooltip">
-                      Please choose a unique and valid username.
+                  <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="Enter Email" formControlName="email" required/>
+                    <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                      <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+                      <div *ngIf="f['email'].errors && f['email'].errors['email']">Please, enter valid email address.</div>
+                  </div>
+                  </div>
+                
+                <br>
+
+                <div class="col-md-4 position-relative">
+                    <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="password" placeholder="Enter Password" formControlName="password" required/>
+                      <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+                        <div *ngIf="f['password'].errors && f['password'].errors['required']">password is required.</div>
+                        <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Password should be 8 character long</div>
                     </div>
-                  </div>
-                </div>
-                <br>
-                <div class="col-md-4 position-relative">
-                    <label for="validationTooltip02" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="validationTooltip02" value="abc@gmail.com" required>
                   </div>
                
                   <div class="col-md-4 position-relative">
-                    <label for="validationTooltip01" class="form-label">Director</label>
-                    <input type="text" class="form-control" id="validationTooltip01" value="" required>
+                    <label for="director" class="form-label">Director</label>
+                    <input type="text" class="form-control" id="director" placeholder="Enter Director Name" formControlName="director" required/>
+                    <div *ngIf="f['director'].touched && f['director'].invalid" class="alert alert-danger">
+                      <div *ngIf="f['director'].errors && f['director'].errors['required']">Director name is required.</div>
+                      <div *ngIf="f['director'].errors && f['director'].errors['minlength']">Director name should be 3 character.</div>
+                  </div>
                   </div>
                   <br> 
+
                   <div class="col-md-4 position-relative">
-                    <label for="validationTooltip01" class="form-label">AddressLine</label>
-                    <textarea class="form-control" id="validationTooltip01" rows="3" required></textarea>
+                    <label for="addressLine" class="form-label">AddressLine</label>
+                    <textarea class="form-control" id="addressLine" rows="3" placeholder="Enter Address" formControlName="addressLine" required></textarea>
                   </div>
                   <br>
+
                 <div class="col-md-4 position-relative">
-                  <label for="validationTooltip03" class="form-label">City</label>
-                  <input type="text" class="form-control" id="validationTooltip03" required>
-                  <div class="invalid-tooltip">
-                    Please provide a valid city.
+                  <label for="city" class="form-label">City</label>
+                  <input type="text" class="form-control" id="city" placeholder="Enter City" formControlName="city" required/>
                   </div>
-                </div>
                 <br>
+
                 <div class="col-md-4 position-relative">
-                    <label for="validationTooltip03" class="form-label">State</label>
-                    <input type="text" class="form-control" id="validationTooltip03" required>
-                    <div class="invalid-tooltip">
-                      Please provide a valid State.
+                    <label for="state" class="form-label">State</label>
+                    <input type="text" class="form-control" id="state"  placeholder="Enter State" formControlName="state" required/>
                     </div>
+                  <br>
+
+                <div class="col-md-4 position-relative">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" class="form-control" id="country" placeholder="Enter Country" formControlName="country" required/>
                   </div>
                   <br>
+
                 <div class="col-md-4 position-relative">
-                    <label for="validationTooltip03" class="form-label">Country</label>
-                    <input type="text" class="form-control" id="validationTooltip03" required>
-                    <div class="invalid-tooltip">
-                      Please provide a valid country.
-                    </div>
-                  </div>
-                  <br>
-                <div class="col-md-4 position-relative">
-                  <label for="validationTooltip04" class="form-label">Type</label>
-                  <select class="form-select" id="validationTooltip04" required>
-                    <option selected disabled value="">Choose...</option>
-                    <option>Charitable Orientation</option>
-                    <option>Participatory Orientation</option>
-                    <option>Empowering Orientation </option>
-                    <option>Service Orientation</option>
+                  <label for="type" class="form-label">Type</label>
+                  <select class="form-select" id="type" formControlName="type" >
+                    <option value="none" selected disabled hidden> Choose... </option>
+                    <option value="Charitable Orientation">Charitable Orientation</option>
+                    <option value="Participatory Orientation">Participatory Orientation</option>
+                    <option value="Empowering Orientation">Empowering Orientation </option>
+                    <option value="Service Orientation">Service Orientation</option>
                   </select>
-                  <div class="invalid-tooltip">
-                    Please select a valid type.
-                  </div>
                 </div>
+
                 <div class="col-12">
-                  <button class="btn btn-primary" type="submit">Submit form</button>
+                  <button class="btn btn-primary" type="submit" onclick="submit();"> Submit form </button>
                 </div>
-              </form>
+              
+            </form>
+</div></div></body>
