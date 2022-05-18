@@ -1,8 +1,9 @@
+<app-ngo-navbar></app-ngo-navbar>
 <body>
-<div class="container-fluid" >
+
+<div class="container" >
 <div class="row">
-    <div>
-        <div class="">
+
             <div >
                 <div><h2>Registration</h2>
                   <br>
@@ -22,11 +23,11 @@
             </div>
             <br>
             <br>
-            <form class="row g-3 needs-validation"  [formGroup]="form">
+            <form class="row g-3 needs-validation"  [formGroup]="form" (ngSubmit)="submit(ngoregister.value)" #ngoregister="ngForm">
                 
               <div class="col-md-4 position-relative">
                   <label for="name" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter Name"  formControlName="name" required/>
+                  <input name="name" type="text" class="form-control" id="name" placeholder="Enter Name"  formControlName="name" required/>
                   <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
                     <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
                     <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
@@ -36,7 +37,7 @@
 
                 <div class="col-md-4 position-relative">
                   <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email" placeholder="Enter Email" formControlName="email" required/>
+                    <input name="email" type="text" class="form-control" id="email" placeholder="Enter Email" formControlName="email" required/>
                     <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
                       <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
                       <div *ngIf="f['email'].errors && f['email'].errors['email']">Please, enter valid email address.</div>
@@ -47,7 +48,7 @@
 
                 <div class="col-md-4 position-relative">
                     <label for="password" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="password" placeholder="Enter Password" formControlName="password" required/>
+                      <input name="password" type="password" class="form-control" id="password" placeholder="Enter Password" formControlName="password" required/>
                       <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
                         <div *ngIf="f['password'].errors && f['password'].errors['required']">password is required.</div>
                         <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Password should be 8 character long</div>
@@ -56,7 +57,7 @@
                
                   <div class="col-md-4 position-relative">
                     <label for="director" class="form-label">Director</label>
-                    <input type="text" class="form-control" id="director" placeholder="Enter Director Name" formControlName="director" required/>
+                    <input name="director" type="text" class="form-control" id="director" placeholder="Enter Director Name" formControlName="director" required/>
                     <div *ngIf="f['director'].touched && f['director'].invalid" class="alert alert-danger">
                       <div *ngIf="f['director'].errors && f['director'].errors['required']">Director name is required.</div>
                       <div *ngIf="f['director'].errors && f['director'].errors['minlength']">Director name should be 3 character.</div>
@@ -66,41 +67,59 @@
 
                   <div class="col-md-4 position-relative">
                     <label for="addressLine" class="form-label">AddressLine</label>
-                    <textarea class="form-control" id="addressLine" rows="3" placeholder="Enter Address" formControlName="addressLine" required></textarea>
+                    <textarea name="addressLine" class="form-control" id="addressLine" rows="3" placeholder="Enter Address" formControlName="addressLine" required></textarea>
+                    <div *ngIf="f['addressLine'].touched && f['addressLine'].invalid" class="alert alert-danger">
+                      <div *ngIf="f['addressLine'].errors && f['addressLine'].errors['required']">Address is required.</div>
+                  </div>
                   </div>
                   <br>
 
                 <div class="col-md-4 position-relative">
                   <label for="city" class="form-label">City</label>
-                  <input type="text" class="form-control" id="city" placeholder="Enter City" formControlName="city" required/>
+                  <input name="city" type="text" class="form-control" id="city" placeholder="Enter City" formControlName="city" required/>
+                  <div *ngIf="f['city'].touched && f['city'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['city'].errors && f['city'].errors['required']">City is required.</div>
+                </div>
                   </div>
                 <br>
 
                 <div class="col-md-4 position-relative">
                     <label for="state" class="form-label">State</label>
-                    <input type="text" class="form-control" id="state"  placeholder="Enter State" formControlName="state" required/>
+                    <input name="state" type="text" class="form-control" id="state"  placeholder="Enter State" formControlName="state" required/>
+                    <div *ngIf="f['state'].touched && f['state'].invalid" class="alert alert-danger">
+                      <div *ngIf="f['state'].errors && f['state'].errors['required']">State is required.</div>
+                  </div>
                     </div>
                   <br>
 
                 <div class="col-md-4 position-relative">
                     <label for="country" class="form-label">Country</label>
-                    <input type="text" class="form-control" id="country" placeholder="Enter Country" formControlName="country" required/>
+                    <input name="country" type="text" class="form-control" id="country" placeholder="Enter Country" formControlName="country" required/>
+                    <div *ngIf="f['country'].touched && f['country'].invalid" class="alert alert-danger">
+                      <div *ngIf="f['country'].errors && f['country'].errors['required']">Country is required.</div>
+                  </div>
                   </div>
                   <br>
 
                 <div class="col-md-4 position-relative">
                   <label for="type" class="form-label">Type</label>
-                  <select class="form-select" id="type" formControlName="type" >
+                  <select name="type" class="form-select" id="type" formControlName="type" >
                     <option value="none" selected disabled hidden> Choose... </option>
                     <option value="Charitable Orientation">Charitable Orientation</option>
                     <option value="Participatory Orientation">Participatory Orientation</option>
                     <option value="Empowering Orientation">Empowering Orientation </option>
                     <option value="Service Orientation">Service Orientation</option>
                   </select>
+                  <div *ngIf="f['type'].touched && f['type'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['type'].errors && f['type'].errors['required']">Type is required.</div>
+                </div>
                 </div>
 
+                <!-- <button type="submit">SUBMIT</button> -->
+
                 <div class="col-12">
-                  <button class="btn btn-primary" type="submit" onclick="submit();"> Submit form </button>
+                  <button class="btn btn-primary" type="submit"> Submit form </button>
                 </div>
               
             </form>
+</div></div></body>

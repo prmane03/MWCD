@@ -1,0 +1,29 @@
+
+  #nav {
+    width:750px;
+    margin:0 auto;
+    list-style:none;
+    }
+    #nav li {
+    float:left;
+    }
+    #nav a {
+    display:block;
+    text-align:center;
+    width:150px; /* fixed width */
+    text-decoration:none; 
+    color: white;
+    }
+
+    a:link, a:visited {
+        color: rgb(175, 166, 166);
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+      }
+      
+      a:hover, a:active {
+        background-color:rgb(224, 127, 53);
+        color: white;
+      }

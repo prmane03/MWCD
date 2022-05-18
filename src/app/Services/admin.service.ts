@@ -15,10 +15,14 @@ export class AdminService {
   {
     return this.http.get(`${this.apiUrl}`);
   }
-
-  getByIdEmail(email:String):Observable<any>
+  getByEmail(email:String):Observable<any>
   {
     return this.http.get(`http://localhost:8086/WESpringBoot/adminsByEmail/${email}`);
+  }
+
+  fetchByEmail(email:String):Observable<any>
+  {
+    return this.http.get(`http://localhost:8086/WESpringBoot/getAdminsByEmail/${email}`);
   }
 
   getById(id:any):Observable<any>

@@ -18,7 +18,7 @@ export class AdminNgoComponent implements OnInit {
      
 
   display() {
-      this.ms. getAll().subscribe(data => {
+      this.ms.getAll().subscribe(data => {
           this.ngo = data;
           console.log(this.ngo);
       });
