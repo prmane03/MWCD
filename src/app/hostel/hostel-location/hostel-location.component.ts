@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HostelService } from 'src/app/Services/hostel.service';
 @Component({
   selector: 'app-hostel-location',
   templateUrl: './hostel-location.component.html',
@@ -10,5 +11,10 @@ export class HostelLocationComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
+  // getLocation():any
+
+
 
 }
