@@ -1,8 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { HostelService } from 'src/app/Services/hostel.service';
-import { HostelBookingComponent } from 'src/app/hostel/hostel-booking/hostel-booking.component';
-import { HostelLocationComponent } from 'src/app/hostel/hostel-location/hostel-location.component';
+
 @Component({
   selector: 'app-hostel',
   templateUrl: './hostel.component.html',
