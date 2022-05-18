@@ -69,7 +69,7 @@ const routes: Routes = [
   },
   
   // ngo routes 
-  { path: 'ngoDashboard', component: NgoComponent },
+  { path: 'ngoDashboard', canActivate: [AuthGuard,RoleGuard] , data: {roles: ['ngo']}, component: NgoComponent },
   {
     path: 'ngoDashboard',  canActivate: [AuthGuard,RoleGuard] , data: {roles: ['ngo']}, children:
 
@@ -94,7 +94,7 @@ const routes: Routes = [
 
     // step routes
     {
-      path: 'step', children:
+      path: 'step',canActivate: [AuthGuard,RoleGuard] , data: {roles: ['candadates']}, children:
         [
           { path: 'ngo', component: NgoinfoComponent },
           { path: 'training-sectors', component: TrainingSectorComponent }
