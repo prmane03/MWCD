@@ -75,7 +75,6 @@ export class NgoregisterComponent implements OnInit {
     
     public ngoPre:boolean;
     submit(ngodata:any){
-    if(this.role=='ngos'){
       this.ng.getByEmail( ngodata.email ).subscribe((data)=>{
         this.ngoPre= data;
         console.log(this.ngoPre);
@@ -89,7 +88,6 @@ export class NgoregisterComponent implements OnInit {
       });
     }
   }
-}
   // myItem: any;
   // storeName() {
   //   localStorage.setItem('email', 'Angular');
