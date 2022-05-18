@@ -22,57 +22,71 @@ import { CriteriaComponent } from './ngo/criteria/criteria.component';
 import { NgostatusComponent } from './ngo/ngostatus/ngostatus.component';
 import { OrganizationComponent } from './ngo/organization/organization.component';
 import { FundingComponent } from './ngo/funding/funding.component';
-import { NgoHomeComponent } from './main/ngo-home/ngo-home.component';
+import { HostelBookingComponent } from './hostel/hostel-booking/hostel-booking.component';
 
 
 const routes: Routes = [
 
-  // main routes 
-  { 
-    path: '', 
-    component: HomeComponent , 
-    canActivate:[RoleGuard],
-    data:{
-      roles:['admins','candidates','ngo']
+  {
+    path: '',
+    component: HomeComponent,
+    canActivate: [RoleGuard],
+    data: {
+      roles: ['admins', 'candidates', 'ngo']
     }
   },
   { path: 'about', component: AboutComponent },
   { path: 'legislation', component: LegislationComponent },
   { path: 'step', component: StepComponent },
+  { path: 'ngo', component: NgoComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'sukanya', component: SukanyaComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'hostel', component: HostelComponent },
-  {path: 'ngo', component:NgoHomeComponent},
-  
-  // admin routes 
-  { path: 'admin',children:[
-      { path: 'adminngo', component:  AdminNgoComponent},
-      { path: 'add-ngo', component:  AddNgoComponent},
-      { path: 'update-ngo', component:  UpdateNgoComponent},
-      { path: 'add-candidate', component: AddCandidateComponent},
-      { path: 'update-candidate', component: UpdateCandidateComponent}
-  ] },
-  
-// ngo routes 
-{path: 'ngoDashboard', component:NgoComponent},
-  { path: 'ngoDashboard',children : 
-  [
-      {path: 'criteria', component: CriteriaComponent},
-      {path: 'funding', component: FundingComponent},
-      {path: 'organization', component: OrganizationComponent},
-      {path: 'ngoregister', component: NgoregisterComponent},
-      {path: 'ngostatus', component: NgostatusComponent},
-    
-  ]},
+  {
+    path: 'hostel', children: [
+      { path: 'hostel-booking', component: HostelBookingComponent }
+    ]
+  },
+  {
+    path: 'admin', children: [
+      { path: 'adminngo', component: AdminNgoComponent },
+      { path: 'add-ngo', component: AddNgoComponent },
+      { path: 'update-ngo', component: UpdateNgoComponent },
+      { path: 'add-candidate', component: AddCandidateComponent },
+      { path: 'update-candidate', component: UpdateCandidateComponent }
+    ]
+  },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'ngoregister', component: NgoregisterComponent },
+  { path: 'criteria', component: CriteriaComponent },
+  { path: 'ngostatus', component: NgostatusComponent },
+  { path: 'organization', component: OrganizationComponent },
+  { path: 'funding', component: FundingComponent },
+  { path: 'adminngo', component: AdminNgoComponent },
+  { path: 'ngostatus', component: NgostatusComponent },
+  {
+    path: 'auth', children:
 
-  // login register routes 
-  { path: 'auth',children : 
-  [
-    { path: 'login/:type', component: LoginComponent },
-    { path: 'register/:type', component: RegisterComponent }
-  ] },
-  
+      [
+        { path: 'criteria', component: CriteriaComponent },
+        { path: 'funding', component: FundingComponent },
+        { path: 'organization', component: OrganizationComponent },
+        { path: 'ngoregister', component: NgoregisterComponent },
+        { path: 'ngostatus', component: NgostatusComponent },
+
+      ]
+  },
+  { path: 'adminngo', component: AdminNgoComponent },
+  {
+    path: 'auth', children:
+      [
+        { path: 'login/:type', component: LoginComponent },
+        { path: 'register/:type', component: RegisterComponent }
+      ]
+  },
+
 
 
 ];
