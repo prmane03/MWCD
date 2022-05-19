@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
               localStorage.setItem('password',this.fetchedUser.password);
               localStorage.setItem('email',this.fetchedUser.email);
               localStorage.setItem('role', 'candidates');
-              this.router.navigate(['/step/training-sectors']);
+              this.router.navigate(['/step/about']);
             } else {
               alert("Wrong PassWord");
             }
