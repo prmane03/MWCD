@@ -29,6 +29,10 @@ import { AdminAboutComponent } from './admin/admin-about/admin-about.component';
 import { NgoinfoComponent } from './step/ngoinfo/ngoinfo.component';
 import { TrainingSectorComponent } from './step/training-sector/training-sector.component';
 import { AuthGuard } from './Guard/auth.guard';
+import { StepRegistrationComponent } from './step/step-registration/step-registration.component';
+import { AboutStepComponent } from './step/about-step/about-step.component';
+import { StepFaqComponent } from './step/step-faq/step-faq.component';
+import { StepGuidelinesComponent } from './step/step-guidelines/step-guidelines.component';
 
 
 const routes: Routes = [
@@ -94,10 +98,14 @@ const routes: Routes = [
 
     // step routes
     {
-      path: 'step',canActivate: [AuthGuard,RoleGuard] , data: {roles: ['candadates']}, children:
+      path: 'step',canActivate: [AuthGuard,RoleGuard] , data: {roles: ['candidates']}, children:
         [
           { path: 'ngo', component: NgoinfoComponent },
-          { path: 'training-sectors', component: TrainingSectorComponent }
+          { path: 'training-sectors', component: TrainingSectorComponent },
+          { path: 'faq', component: StepFaqComponent },
+          { path: 'guidelines', component: StepGuidelinesComponent },
+          { path: 'about', component: AboutStepComponent },
+          { path: 'registration', component: StepRegistrationComponent }
         ]
     },
   

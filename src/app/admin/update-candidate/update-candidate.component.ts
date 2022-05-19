@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { CandidateService } from 'src/app/Services/candidate.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { CandidateService } from 'src/app/Services/candidate.service';
 })
 export class UpdateCandidateComponent implements OnInit {
 
-  constructor(private cs:CandidateService,private route: ActivatedRoute) { }
+  constructor(private cs:CandidateService,private route: ActivatedRoute,private router:Router) { }
 
   id: number;
   ngOnInit(): void {
@@ -40,7 +40,7 @@ export class UpdateCandidateComponent implements OnInit {
   submit(candidatedata:any){
     this.cs.update(this.id,candidatedata).subscribe(response => alert(response));
     alert('Updated successfully!');
-  
+    this.router.navigate(['/admin/candidate'],);
   }
 
 }

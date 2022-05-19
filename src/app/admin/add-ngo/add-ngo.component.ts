@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NGOService } from 'src/app/Services/ngo.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { NGOService } from 'src/app/Services/ngo.service';
 })
 export class AddNgoComponent implements OnInit {
 
-  constructor(private ns:NGOService) { }
+  constructor(private ns:NGOService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -28,6 +29,6 @@ export class AddNgoComponent implements OnInit {
 submit(ngodata:any){
   this.ns.create(ngodata).subscribe(response => alert(response));
   alert('Added successfully!');
-
+  this.router.navigate(['/admin/adminngo'],);
 }
 }

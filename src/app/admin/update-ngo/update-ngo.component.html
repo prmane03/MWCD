@@ -1,75 +1,104 @@
 <app-admin-navbar></app-admin-navbar>
 
-<form action=""  [formGroup]="form" (ngSubmit)="submit(updatengo.value)" #updatengo="ngForm">
-  <div class="mb-3 mt-3 col-md-3">
-    <label for="email" class="form-label">Email:</label>
-    <input name="email" type="email" class="form-control" id="email" placeholder="Enter email" formControlName="email" name="email">
-    <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
-      <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
-      <div *ngIf="f['email'].errors && f['email'].errors['minlength']">Email should be 3 character.</div>
-      </div>
-      </div>
-      
-    <div class="mb-3 col-md-3">
-      <label for="pwd" class="form-label">Password:</label>
-      <input name="password" type="password" class="form-control" id="pwd" placeholder="Enter password" formControlName="password" name="pswd">
-      <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
-        <div *ngIf="f['password'].errors && f['password'].errors['required']">password is required.</div>
-        <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Password should be 8 character long</div>
-    </div>
+<div class="container col-md-6 p-2">
+  <h5 class="text-center my-4">Update NGO</h5>
+  <form action="" [formGroup]="form" (ngSubmit)="submit(updatengo.value)" #updatengo="ngForm">
+    <div class="row">
 
-
-    </div>
-    <div class="mb-3 col-md-3">
-      <label for="name" class="form-label">Name:</label>
-      <input name="name" type="text" class="form-control" id="name" placeholder="Enter name" formControlName="name" name="name">
-      <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
-        <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
-        <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
-      </div>
-      </div>
-
-      <div class="mb-3 col-md-3">
-        <label for="dir" class="form-label">Director:</label>
-        <input name="director" type="text" class="form-control" id="dir" placeholder="Enter director's name" formControlName="director" name="dir">
-        <div *ngIf="f['director'].touched && f['director'].invalid" class="alert alert-danger">
-          <div *ngIf="f['director'].errors && f['director'].errors['required']">Director name is required.</div>
-          <div *ngIf="f['director'].errors && f['director'].errors['minlength']">Director name should be 3 character.</div>
+      <div class="mb-3 mt-3 col-md-6">
+        <label for="email" class="form-label">Email:</label>
+        <input name="email" type="email" class="form-control" id="email" placeholder="Enter email"
+          formControlName="email" name="email">
+        <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+          <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+          <div *ngIf="f['email'].errors && f['email'].errors['minlength']">Email should be 3 character.</div>
         </div>
       </div>
 
-      <select name="type" class="form-select" aria-label="Default select example">
-        <option selected>Type</option>
-        <option value="1">Charitable Orientation</option>
-        <option value="2">Participatory Orientation</option>
-        <option value="3">Empowering Orientation</option>
-        <option value="4">Servcie Orientation</option>
-        </select><br>
-
-        <div class="mb-3 col-md-3">
-          <label for="address" class="form-label">AddressLine:</label>
-          <input name="addressLine" type="text" class="form-control" id="dir" placeholder="Enter address" formControlName="address" name="address">
-          <div *ngIf="f['address'].touched && f['address'].invalid" class="alert alert-danger">
-            <div *ngIf="f['address'].errors && f['address'].errors['required']">address is required.</div>
+      <div class="mb-3 mt-3 col-md-6">
+        <label for="pwd" class="form-label">Password:</label>
+        <input name="password" type="password" class="form-control" id="pwd" placeholder="Enter password"
+          formControlName="password" name="pswd">
+        <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+          <div *ngIf="f['password'].errors && f['password'].errors['required']">password is required.</div>
+          <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Password should be 8 character long
           </div>
-        </div><br>
+        </div>
+      </div>
+    </div>
+    <div class="row">
 
-      <select name="country" class="form-select" aria-label="Default select example">
-        <option selected>Select Country</option>
-        <option value="1">India</option>
-      </select><br>
+      <div class="mb-3 col-md-6">
+        <label for="name" class="form-label">Name:</label>
+        <input name="name" type="text" class="form-control" id="name" placeholder="Enter name" formControlName="name"
+          name="name">
+        <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+          <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
+          <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
+        </div>
+      </div>
 
-      <select name="state" class="form-select" aria-label="Default select example">
-        <option selected>Select State</option>
-        <option value="1">Andhra Pradesh</option>
-        <option value="2">Tamilnadu</option>
-        <option value="3">Odissa</option>
-        <option value="4">Maharashtra</option>
-        <option value="5">Goa</option>
-        <option value="6">Punjab</option>
-        <option value="7">Telangana</option>
-        <option value="8">Others</option>
-      </select><br>
+      <div class="mb-3 col-md-6">
+        <label for="dir" class="form-label">Director:</label>
+        <input name="director" type="text" class="form-control" id="dir" placeholder="Enter director's name"
+          formControlName="director" name="dir">
+        <div *ngIf="f['director'].touched && f['director'].invalid" class="alert alert-danger">
+          <div *ngIf="f['director'].errors && f['director'].errors['required']">Director name is required.</div>
+          <div *ngIf="f['director'].errors && f['director'].errors['minlength']">Director name should be 3 character.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mb-3 col-md-6">
 
-      <button type="submit" class="btn btn-primary">Update</button>
-</form>
+        <label for="address" class="form-label">Type:</label>
+        <select name="type" class="form-select" aria-label="Default select example">
+          <option selected>Type</option>
+          <option value="1">Charitable Orientation</option>
+          <option value="2">Participatory Orientation</option>
+          <option value="3">Empowering Orientation</option>
+          <option value="4">Servcie Orientation</option>
+        </select><br>
+      </div>
+      <div class="mb-3 col-md-6">
+        <label for="address" class="form-label">AddressLine:</label>
+        <input name="addressLine" type="text" class="form-control" id="dir" placeholder="Enter address"
+          formControlName="address" name="address">
+        <div *ngIf="f['address'].touched && f['address'].invalid" class="alert alert-danger">
+          <div *ngIf="f['address'].errors && f['address'].errors['required']">address is required.</div>
+          <div *ngIf="f['address'].errors && f['address'].errors['minlength']">min 25 chars required.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <select name="country" class="form-select" aria-label="Default select example">
+          <option selected>Select Country</option>
+          <option value="1">India</option>
+        </select><br>
+      </div>
+      <div class="col-md-6">
+
+
+        <select name="state" class="form-select" aria-label="Default select example">
+          <option selected>Select State</option>
+          <option value="1">Andhra Pradesh</option>
+          <option value="2">Tamilnadu</option>
+          <option value="3">Odissa</option>
+          <option value="4">Maharashtra</option>
+          <option value="5">Goa</option>
+          <option value="6">Punjab</option>
+          <option value="7">Telangana</option>
+          <option value="8">Others</option>
+        </select><br>
+      </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary mx-2">Update</button>
+    <button type="button" class="btn btn-primary" routerLink="/admin/adminngo" routerLinkActive="active">Back</button>
+  </form>
+</div>

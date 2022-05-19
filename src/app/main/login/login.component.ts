@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
               localStorage.setItem('password',this.fetchedUser.password);
               localStorage.setItem('email',this.fetchedUser.email);
               localStorage.setItem('name',this.fetchedUser.name);
-              localStorage.setItem('role', 'admin');
+              localStorage.setItem('role', 'admins');
               this.router.navigate(['/admin/adminngo']);
             } else {
               alert("Wrong PassWord");
@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit {
               localStorage.setItem('id',this.fetchedUser.id);
               localStorage.setItem('password',this.fetchedUser.password);
               localStorage.setItem('email',this.fetchedUser.email);
-              localStorage.setItem('role', 'candidate');
+              localStorage.setItem('role', 'candidates');
               this.router.navigate(['/step/training-sectors']);
             } else {
               alert("Wrong PassWord");

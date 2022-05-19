@@ -38,6 +38,10 @@ import { AdminAboutComponent } from './admin/admin-about/admin-about.component';
 import { TrainingSectorComponent } from './step/training-sector/training-sector.component';
 import { StepNavbarComponent } from './step/step-navbar/step-navbar.component';
 import { NgoinfoComponent } from './step/ngoinfo/ngoinfo.component';
+import { AboutStepComponent } from './step/about-step/about-step.component';
+import { StepRegistrationComponent } from './step/step-registration/step-registration.component';
+import { StepGuidelinesComponent } from './step/step-guidelines/step-guidelines.component';
+import { StepFaqComponent } from './step/step-faq/step-faq.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +79,11 @@ import { NgoinfoComponent } from './step/ngoinfo/ngoinfo.component';
     AdminNavbarComponent,
     AdminAboutComponent,
     TrainingSectorComponent,
-    StepNavbarComponent
+    StepNavbarComponent,
+    AboutStepComponent,
+    StepRegistrationComponent,
+    StepGuidelinesComponent,
+    StepFaqComponent
   ],
   imports: [
     BrowserModule,

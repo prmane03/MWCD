@@ -4,13 +4,14 @@ import { Router } from '@angular/router';
 import { CandidateService } from 'src/app/Services/candidate.service';
 
 @Component({
-  selector: 'app-add-candidate',
-  templateUrl: './add-candidate.component.html',
-  styleUrls: ['./add-candidate.component.css']
+  selector: 'app-step-registration',
+  templateUrl: './step-registration.component.html',
+  styleUrls: ['./step-registration.component.css']
 })
-export class AddCandidateComponent implements OnInit {
+export class StepRegistrationComponent implements OnInit {
 
-  constructor(private cs:CandidateService,private router:Router) { }
+  constructor(private cs: CandidateService, private router: Router) { }
+
 
   ngOnInit(): void {
   }
@@ -22,17 +23,16 @@ export class AddCandidateComponent implements OnInit {
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
   });
 
-  get f(){
+  get f() {
     return this.form.controls;
   }
 
-submit(formdata:any){
-  this.cs.create(formdata).subscribe(response => alert(response));
-  alert('Added successfully!');
-  this.router.navigate(['/admin/candidate'],);
-}
+  id: any;
+  submit(formdata: any) {
+    this.id = localStorage.getItem('id');
+    this.cs.update(this.id, formdata).subscribe(response => alert(response));
+    alert('Added successfully!');
+    this.router.navigate(['/admin/candidate'],);
+  }
 
 }
-
-
-

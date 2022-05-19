@@ -11,7 +11,7 @@
             <th>Address</th>
             <th>Type</th>
             <th>Update</th>
-           
+            
         </thead>
         <tbody>
             <tr *ngFor="let x of candidate">
@@ -21,7 +21,7 @@
                 <td>{{x.director}}</td>
                 <td>{{x.addressLine}}</td>
                 <td>{{x.type}}</td>
-                <td><a href="">Update</a></td>
+                <td><a [routerLink]="['/admin/update-candidate',x.nid]" routerLinkActive="">Update</a></td>
     
             </tr>
         </tbody>

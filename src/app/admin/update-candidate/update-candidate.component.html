@@ -2,94 +2,111 @@
 
 <div class="container col-md-6">
 
-  <form action="" [formGroup]="form">
+  <h5 class="text-center my-4">Update Candidate</h5>
+  <form action="" [formGroup]="form" (ngSubmit)="submit(updateCandidate.value)" #updateCandidate="ngForm">
     <div class="row">
 
       <div class="my-3 col">
-          <label for="name" class="form-label">Name:</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter your name" formControlName="name" value="" name="name">
-          <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
-            <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
-            <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
-          </div>
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your name" formControlName="name"
+          name="name">
+        <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+          <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
+          <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
         </div>
-
-        <div class="my-3 col">
-          <label for="fathnam" class="form-label">Father's Name:</label>
-          <input type="text" class="form-control" id="fathnam" placeholder="Enter your father's name" formControlName="fathername" value="" name="fathnam">
-          <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
-            <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
-            <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
-          </div>
-        </div>
-    </div>
+      </div>
 
       <div class="mb-3">
         <label for="email" class="form-label">Email:</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter your email" formControlName="email" value="" name="email">
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" formControlName="email"
+          name="email">
         <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
-            <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
-            <div *ngIf="f['email'].errors && f['email'].errors['minlength']">Email should be 3 character.</div>
+          <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+          <div *ngIf="f['email'].errors && f['email'].errors['minlength']">Email should be 3 character.</div>
         </div>
       </div>
 
-      <div class="mb-3">
-        <label for="pwd" class="form-label">Password:</label>
-        <input type="password" class="form-control" id="pwd" placeholder="Enter your password" formControlName="password" value="" name="pswd">
-        <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
-            <div *ngIf="f['password'].errors && f['password'].errors['required']">password is required.</div>
-            <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Password should be 8 character long</div>
+
+    </div>
+
+    <div class="row">
+      <div class="my-3 col">
+        <label for="fathnam" class="form-label">Father's Name:</label>
+        <input type="text" class="form-control" id="fathnam" placeholder="Enter your father's name"
+          formControlName="fathername" name="fatherName">
+        <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+          <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
+          <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
         </div>
       </div>
+      <div class="my-3 col">
+        <label for="mothernm" class="form-label">Mother's Name:</label>
+        <input type="text" class="form-control" id="mothernm" placeholder="Enter your mother's name"
+          name="motherName">
+      </div>
+    </div>
 
-      <select class="form-select" aria-label="Default select example">
-        <option selected>Nationality:</option>
-        <option value="1">Indian</option>
-        <option value="2">Others</option>
-      </select><br>
 
-          <div class="mb-3 col">
-            <label for="mob" class="form-label">Mobile Number:</label>
-            <input type="text" class="form-control" id="mob" placeholder="Enter your mobile number" value="" name="mob">
-          </div>
-          
-          <div class="mb-3 col">
-            <label for="aadh" class="form-label">Aadhar number:</label>
-            <input type="text" class="form-control" id="aadh" placeholder="Enter your aadhar number" value="" name="aadh">
-          </div>
 
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Marital Status</option>
-          <option value="1">Single</option>
-          <option value="2">Married</option>
-          <option value="3">Divorced</option>
-          <option value="4">Widowed</option>
-        </select><br>
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Highest Qualification</option>
-          <option value="1">SSC</option>
-          <option value="2">HSC</option>
-          <option value="3">Graduation</option>
-          <option value="4">Post-Graduation</option>
-        </select><br>
+    <div class="mb-3">
+      <label for="pwd" class="form-label">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter your password" formControlName="password"
+        name="password">
+      <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+        <div *ngIf="f['password'].errors && f['password'].errors['required']">password is required.</div>
+        <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Password should be 8 character long</div>
+      </div>
+    </div>
 
-        <div class="row">
-          <div class="mb-3 col">
-            <label for="hqp" class="form-label">Highest Qualification Proof:</label>
-            <input type="file" class="form-control" id="hqp" placeholder="Enter your mobile number" value="" name="hqp">
-          </div><br>
-          <div class="mb-3 col">
-            <label for="ap" class="form-label">Aadhar Proof:</label>
-            <input type="file" class="form-control" id="ap" placeholder="Enter your mobile number" value="" name="ap">
-          </div><br>
-          <div class="mb-3 col">
-            <label for="ip" class="form-label">Income Proof:</label>
-            <input type="file" class="form-control" id="ip" placeholder="Enter your mobile number" value="" name="ip">
-          </div><br>
-      
-        </div>
-    
-    
-      <button type="submit" class="btn btn-primary">Update</button>
-    </form>
+    <select class="form-select" aria-label="Default select example" name="nationality">
+      <option selected>Nationality:</option>
+      <option value="1">Indian</option>
+      <option value="2">Others</option>
+    </select><br>
+
+    <div class="mb-3 col">
+      <label for="mob" class="form-label">Mobile Number:</label>
+      <input type="text" class="form-control" id="mob" placeholder="Enter your mobile number" name="mobile">
+    </div>
+
+    <div class="mb-3 col">
+      <label for="aadh" class="form-label">Aadhar number:</label>
+      <input type="text" class="form-control" id="aadh" placeholder="Enter your aadhar number" name="adharNumber">
+    </div>
+
+    <select class="form-select" aria-label="Default select example" name="maritalStatus">
+      <option selected>Marital Status</option>
+      <option value="1">Single</option>
+      <option value="2">Married</option>
+      <option value="3">Divorced</option>
+      <option value="4">Widowed</option>
+    </select><br>
+    <select class="form-select" aria-label="Default select example" name="highestQualification">
+      <option selected>Highest Qualification</option>
+      <option value="1">SSC</option>
+      <option value="2">HSC</option>
+      <option value="3">Graduation</option>
+      <option value="4">Post-Graduation</option>
+    </select><br>
+
+    <div class="row">
+      <div class="mb-3 col">
+        <label for="hqp" class="form-label">Highest Qualification Proof:</label>
+        <input type="file" class="form-control" id="hqp" placeholder="Enter your mobile number" name="highestQualificationProof">
+      </div><br>
+      <div class="mb-3 col">
+        <label for="ap" class="form-label">Aadhar Proof:</label>
+        <input type="file" class="form-control" id="ap" placeholder="Enter your mobile number" name="adharPhoto">
+      </div><br>
+      <div class="mb-3 col">
+        <label for="ip" class="form-label">Income Proof:</label>
+        <input type="file" class="form-control" id="ip" placeholder="Enter your mobile number" name="incomeProof">
+      </div><br>
+
+    </div>
+
+
+    <button type="submit" class="btn btn-primary mx-2">Update</button>
+    <button type="button" class="btn btn-primary" routerLink="/admin/candidate" routerLinkActive="active">Back</button>
+  </form>
 </div>
